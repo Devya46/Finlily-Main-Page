@@ -100,7 +100,7 @@
     background: #1a2a44;
     padding: 6px 14px;
     border-radius: 30px;
-    font-size: 12px;
+    font-size: 16px;
     margin-bottom: 18px;
   }
 
@@ -215,11 +215,14 @@
     }
 
     .fh-left h1 {
-      font-size: 34px;
+      font-size: 50px;
+    }
+    .fh-tag {
+      font-size: 22px;
     }
 
     .fh-sub {
-      font-size: 16px;
+      font-size: 20px;
     }
 
     .fh-right img {
@@ -231,10 +234,23 @@
       flex-wrap: wrap;
       justify-content: center;
       width: 100%;
+      font-size: 18px;
     }
 
     .store-buttons {
       justify-content: center;
+      padding: 21px 36px;
+    }
+    .store-btn .text {
+      display: flex;
+      flex-direction: column;
+      font-weight: 600;
+      font-size: 26px;
+      line-height: 1.1;
+    }
+    .store-btn small {
+      font-size: 14px;
+      opacity: 0.8;
     }
   }
 
@@ -1390,8 +1406,8 @@
     <div>✔ Structured Swing Trading Framework</div>
   </div>
 
-  <!-- ANALYST GRID -->
-  <div class="analyst-grid">
+  <!-- ANALYST GRID (SCROLLABLE) -->
+  <div class="analyst-scroll">
     <!-- Analyst 1 -->
     <div class="analyst-card">
       <img src="https://i.pravatar.cc/150?img=12" />
@@ -1423,106 +1439,822 @@
       <p>Market Strategist</p>
       <span class="verify">✔ Verified</span>
     </div>
+
+    <!-- NEW EXTRA CARDS -->
+    <div class="analyst-card">
+      <img src="https://i.pravatar.cc/150?img=15" />
+      <h4>Arjun Verma</h4>
+      <p>Technical Analyst</p>
+      <span class="verify">✔ Verified</span>
+    </div>
+
+    <div class="analyst-card">
+      <img src="https://i.pravatar.cc/150?img=45" />
+      <h4>Sneha Iyer</h4>
+      <p>Derivatives Expert</p>
+      <span class="verify">✔ Verified</span>
+    </div>
+
+    <div class="analyst-card">
+      <img src="https://i.pravatar.cc/150?img=22" />
+      <h4>Rohit Jain</h4>
+      <p>Momentum Trader</p>
+      <span class="verify">✔ Verified</span>
+    </div>
   </div>
-</section>
+  </section>
+
+  <style>
+    .trust-sec {
+      background: radial-gradient(circle at 30% 10%, #0f1b34, #081224 60%);
+      padding: 100px 20px;
+      color: white;
+      text-align: center;
+      font-family: Inter, system-ui;
+    }
+
+    /* HEADING */
+    .trust-title {
+      font-size: 38px;
+      margin-bottom: 40px;
+    }
+
+    .trust-title span {
+      color: #2dd4bf;
+    }
+
+    /* TRUST POINTS */
+    .trust-points {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 18px;
+      max-width: 900px;
+      margin: 0 auto 60px;
+    }
+
+    .trust-points div {
+      background: #0e1a2d;
+      border: 1px solid rgba(45, 212, 191, 0.3);
+      padding: 12px 18px;
+      border-radius: 30px;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    /* ANALYST GRID */
+    .analyst-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    /* CARD */
+    .analyst-card {
+      background: linear-gradient(180deg, #0e1a2d, #0a1426);
+      border: 1px solid rgba(45, 212, 191, 0.25);
+      border-radius: 20px;
+      padding: 30px;
+      position: relative;
+    }
+
+    /* glass shine */
+    .analyst-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.05),
+        transparent
+      );
+      opacity: 0.4;
+    }
+
+    .analyst-card img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .analyst-card h4 {
+      margin: 10px 0 5px;
+    }
+
+    .analyst-card p {
+      opacity: 0.7;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    /* VERIFIED BADGE */
+    .verify {
+      display: inline-block;
+      background: #2dd4bf;
+      color: #042f2e;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    /* SCROLL CONTAINER */
+    .analyst-scroll {
+      display: flex;
+      gap: 25px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      scroll-snap-type: x mandatory;
+    }
+
+    /* Hide scrollbar (premium look) */
+    .analyst-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* CARD SIZE FOR SCROLL */
+    .analyst-card {
+      min-width: 220px;
+      scroll-snap-align: start;
+    }
+  </style>
+
+  <!-- ==============TRUST & AUTHORITY SECTION================   -->
+  <!-- ========== FAQ SECTION ===========  -->
+  <section class="fx-why">
+    <!-- CENTER HEADING -->
+    <div class="fx-top">
+      <span class="fx-tag">FAQ</span>
+      <h2>
+        Smart research. Expert guidance.
+        <br /><span>Confident trading decisions.</span>
+      </h2>
+    </div>
+
+    <div class="fx-wrap">
+      <!-- LEFT ACCORDION -->
+      <div class="fx-left">
+        <div class="fx-item">
+          <button><span>01. Beginner friendly?</span><b>+</b></button>
+          <p>Yes — structured learning plus guided research calls.</p>
+        </div>
+
+        <div class="fx-item">
+          <button><span>02. SEBI registered?</span><b>+</b></button>
+          <p>Recommendations by SEBI Registered Research Analysts.</p>
+        </div>
+
+        <div class="fx-item">
+          <button><span>03. Holding period?</span><b>+</b></button>
+          <p>Typical swing trades last 1–3 months.</p>
+        </div>
+
+        <div class="fx-item">
+          <button><span>04. Trial available?</span><b>+</b></button>
+          <p>Yes — ₹69 single call unlock.</p>
+        </div>
+
+        <div class="fx-item">
+          <button><span>05. Profit guaranteed?</span><b>+</b></button>
+          <p>No — markets carry risk. Research guidance only.</p>
+        </div>
+
+        <div class="fx-item">
+          <button><span>06. Calls per month?</span><b>+</b></button>
+          <p>4–10 high-quality swing opportunities monthly.</p>
+        </div>
+
+        <div class="fx-item">
+          <button><span>07. Support provided?</span><b>+</b></button>
+          <p>Yes — support for understanding strategy & calls.</p>
+        </div>
+
+        <div class="fx-item">
+          <button>
+            <span>08. Good for working professionals?</span><b>+</b>
+          </button>
+          <p>Yes — less screen time than intraday trading.</p>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="fx-right">
+        <img
+          class="fx-img"
+          src="https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg"
+          alt="Trading Desk"
+        />
+
+        <div class="fx-card">
+          <h3>Everything you need to trade smarter</h3>
+
+          <p class="fx-desc">
+            We combine data-driven research, market expertise, and disciplined
+            strategies to help investors make confident swing trading decisions.
+          </p>
+
+          <ul class="fx-points">
+            <li>✔ Research-backed calls</li>
+            <li>✔ Risk-managed approach</li>
+            <li>✔ Beginner to pro friendly</li>
+          </ul>
+
+          <a href="#" class="fx-btn">Start Investing</a>
+
+          <!-- FLOATING BADGE -->
+          <div class="fx-assets">
+            <small>Assets Managed</small>
+            <h4>$250B</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .fx-why {
+      padding: 90px 20px;
+      background: linear-gradient(135deg, #0b1220, #111c2f, #0b1220);
+      color: white;
+      font-family: Inter, system-ui;
+    }
+
+    /* TOP */
+    .fx-top {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .fx-tag {
+      border: 1px solid #1affb2;
+      padding: 6px 16px;
+      border-radius: 30px;
+      color: #1affb2;
+      font-size: 14px;
+    }
+    .fx-top h2 {
+      font-size: 38px;
+      margin-top: 20px;
+    }
+    .fx-top span {
+      color: #1affb2;
+    }
+
+    /* WRAP */
+    .fx-wrap {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    /* LEFT */
+    .fx-left {
+      flex: 1 1 480px;
+    }
+    .fx-item {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .fx-item button {
+      width: 100%;
+      background: none;
+      border: none;
+      color: white;
+      padding: 14px 0;
+      display: flex;
+      justify-content: space-between;
+      font-size: 17px;
+      cursor: pointer;
+    }
+    .fx-item b {
+      color: #1affb2;
+    }
+    .fx-item p {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0.75;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+    .fx-item.active p {
+      max-height: 80px;
+      padding-bottom: 12px;
+    }
+
+    /* RIGHT */
+    .fx-right {
+      flex: 1 1 420px;
+    }
+    .fx-img {
+      width: 100%;
+      border-radius: 16px;
+      height: 220px;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    /* CARD */
+    .fx-card {
+      position: relative;
+      background: linear-gradient(180deg, #182d4e, #000000);
+      border: 1px solid rgba(54, 151, 188, 0.25);
+      /* background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08); */
+      padding: 28px;
+      padding-bottom: 90px;
+      border-radius: 18px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .fx-card:hover {
+      box-shadow: 0 0 30px rgba(26, 255, 178, 0.15);
+      transform: translateY(-4px);
+    }
+
+    .fx-card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+    .fx-desc {
+      opacity: 0.75;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .fx-points {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 20px;
+      font-size: 14px;
+    }
+    .fx-points li {
+      margin-bottom: 6px;
+    }
+
+    .fx-btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 30px;
+      border: 1px solid #1affb2;
+      color: #1affb2;
+      text-decoration: none;
+    }
+
+    /* FLOATING BADGE */
+    .fx-assets {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      background: linear-gradient(145deg, #0f172a, #111c2f);
+      border: 1px solid rgba(26, 255, 178, 0.35);
+      padding: 14px 18px;
+      border-radius: 14px;
+      text-align: right;
+      box-shadow: 0 0 20px rgba(26, 255, 178, 0.15);
+    }
+
+    .fx-assets small {
+      color: #1affb2;
+      font-size: 12px;
+    }
+
+    .fx-assets h4 {
+      font-size: 28px;
+      margin: 4px 0 0;
+      line-height: 1;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .fx-top h2 {
+        font-size: 26px;
+      }
+    }
+  </style>
+
+  <script>
+    document.querySelectorAll(".fx-item button").forEach((btn) => {
+      btn.onclick = () => {
+        btn.parentElement.classList.toggle("active");
+      };
+    });
+  </script>
+
+  <!-- ========== FAQ SECTION ===========   -->
+  <!-- ========== Final CTA SECTION ===========   -->
+  <section class="fx-final-cta">
+    <!-- GLOW BACKGROUND -->
+    <div class="fx-cta-glow"></div>
+
+    <div class="fx-cta-content">
+      <h2>
+        Start Learning & Trading
+        <br />
+        <span>With Expert Guidance Today</span>
+      </h2>
+
+      <p class="fx-cta-sub">
+        Download Finlily App & Get Research-Backed Stock Calls, real trade
+        learning, and expert guidance from SEBI-registered professionals.
+      </p>
+
+      <!-- DOWNLOAD BUTTONS -->
+      <div class="fx-downloads">
+        <!-- APPLE -->
+        <a href="#" class="fx-dl-btn">
+          <svg viewBox="0 0 24 24" class="fx-icon">
+            <path
+              fill="currentColor"
+              d="M17.05 20.28c-.98.95-2.05.8-3.08.36-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.36C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8.78-.06 1.96-.86 3.3-.73 1.61.13 2.82.77 3.62 2.05-3.2 1.92-2.44 6.17.62 7.39-.6 1.48-1.38 2.94-2.62 3.46zM12.03 7.25c-.15-2.23 1.66-4.15 3.74-4.25.29 2.36-2.13 4.39-3.74 4.25z"
+            />
+          </svg>
+
+          <div>
+            <small>Download on the</small>
+            <b>App Store</b>
+          </div>
+        </a>
+
+        <!-- GOOGLE PLAY -->
+        <a href="#" class="fx-dl-btn">
+          <svg viewBox="0 0 512 512" class="fx-icon">
+            <path
+              fill="currentColor"
+              d="M325.3 234.3L104.6 13.6C96.6 5.6 83 11.3 83 23v466c0 11.7 13.6 17.4 21.6 9.4l220.7-220.7c6.2-6.2 6.2-16.3 0-22.4zM357.3 202.3L401 158.6c12.5-12.5 7.3-33.9-9.7-39.3L138.5 7.5l218.8 194.8zM138.5 504.5l252.8-111.8c17-5.4 22.2-26.8 9.7-39.3l-43.7-43.7-218.8 194.8z"
+            />
+          </svg>
+
+          <div>
+            <small>GET IT ON</small>
+            <b>Google Play</b>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    /* SECTION */
+    .fx-final-cta {
+      position: relative;
+      padding: 120px 20px;
+      text-align: center;
+      color: white;
+      font-family: Inter, system-ui;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0b1220, #111c2f, #0b1220);
+    }
+
+    /* GLOW */
+    .fx-cta-glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: #05b3ff;
+      filter: blur(160px);
+      opacity: 0.1;
+      top: -150px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* CONTENT */
+    .fx-cta-content {
+      max-width: 820px;
+      margin: auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .fx-final-cta h2 {
+      font-size: 42px;
+      line-height: 1.3;
+    }
+
+    .fx-final-cta h2 span {
+      color: #1affb2;
+    }
+
+    .fx-cta-sub {
+      margin-top: 20px;
+      font-size: 17px;
+      opacity: 0.8;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* BUTTON WRAP */
+    .fx-downloads {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    /* BUTTON */
+    .fx-dl-btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 26px;
+      border-radius: 18px;
+      text-decoration: none;
+      color: white;
+
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+
+      border: 1px solid rgba(26, 255, 178, 0.35);
+
+      transition: 0.35s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ICON */
+    .fx-icon {
+      width: 28px;
+      height: 28px;
+      color: #1affb2;
+    }
+
+    /* TEXT */
+    .fx-dl-btn small {
+      font-size: 12px;
+      opacity: 0.7;
+      display: block;
+      letter-spacing: 0.5px;
+    }
+
+    .fx-dl-btn b {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    /* HOVER */
+    .fx-dl-btn:hover {
+      transform: translateY(-5px);
+      border-color: #1affb2;
+      box-shadow:
+        0 12px 30px rgba(26, 255, 178, 0.25),
+        inset 0 0 20px rgba(26, 255, 178, 0.15);
+    }
+
+    /* SHINE */
+    .fx-dl-btn::after {
+      content: "";
+      position: absolute;
+      width: 40%;
+      height: 200%;
+      background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.5),
+        transparent
+      );
+      top: -50%;
+      left: -60%;
+      transform: rotate(25deg);
+      transition: 0.7s;
+    }
+
+    .fx-dl-btn:hover::after {
+      left: 120%;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .fx-final-cta h2 {
+        font-size: 28px;
+      }
+    }
+  </style>
+
+  <!-- ========= Final CTA SECTION ===========   -->
+  <!-- ===========Footer============  -->
+<footer class="fx-footer">
+  <div class="fx-footer-wrap">
+    <!-- BRAND -->
+    <div class="fx-col fx-brand">
+      <img
+        src="https://framerusercontent.com/images/Pkydub3sliGjbNVrjmDqbG939Ag.png"
+        class="fx-logo"
+      />
+
+      <p class="fx-desc">
+        Smart stock learning and research-backed calls for confident investing.
+      </p>
+
+      <p class="fx-mail">support@finlilytechnology.com</p>
+
+      <!-- SOCIALS -->
+      <div class="fx-socials">
+        <a
+          href="https://www.linkedin.com/company/finlily-technology/"
+          target="_blank"
+        >
+          <img
+            src="https://framerusercontent.com/images/4I0uO5WpISDay2aPXHK8Kb9HAc.svg"
+          />
+        </a>
+
+        <a
+          href="https://www.facebook.com/people/Finlily-Technology/61559080864349/"
+          target="_blank"
+        >
+          <img
+            src="https://framerusercontent.com/images/yzxNInoSyounvdXiRvGHQXZFYc.png"
+          />
+        </a>
+
+        <a href="https://www.instagram.com/finlilytechnology/" target="_blank">
+          <img
+            src="https://framerusercontent.com/images/e29n3ck4a9kvBPgl9YhDr9UrVe0.svg"
+          />
+        </a>
+      </div>
+    </div>
+
+    <!-- COMPANY -->
+    <div class="fx-col">
+      <h4>Company</h4>
+      <a href="#">About</a>
+      <a href="#">Learn</a>
+      <a href="#">Pricing</a>
+      <a href="#">Support</a>
+    </div>
+
+    <!-- PRODUCT -->
+    <div class="fx-col">
+      <h4>Product</h4>
+      <a href="#">Stock Calls</a>
+      <a href="#">Hot Calls</a>
+      <a href="#">Our App</a>
+      <a href="#">Features</a>
+    </div>
+
+    <!-- LEGAL -->
+    <div class="fx-col">
+      <h4>Legal</h4>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+
+    <!-- DOWNLOAD -->
+    <div class="fx-col">
+      <h4>Download Our App</h4>
+
+      <a
+        href="https://apps.apple.com/in/app/finlily-sebi-ra-stock-calls/id6741014770"
+      >
+        <img
+          class="fx-badge"
+          src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+        />
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=com.finlily">
+        <img
+          class="fx-badge"
+          src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+        />
+      </a>
+    </div>
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="fx-bottom">
+    <p class="fx-note">
+      Stock market investments are subject to market risks. Research calls are
+      provided by SEBI Registered Research Analysts. Past performance does not
+      guarantee future results.
+    </p>
+
+    <p class="fx-copy">© 2025 Finlily Technology. All rights reserved.</p>
+  </div>
+</footer>
 
 <style>
-  .trust-sec {
-    background: radial-gradient(circle at 30% 10%, #0f1b34, #081224 60%);
-    padding: 100px 20px;
-    color: white;
-    text-align: center;
+  .fx-footer {
+    background: #060b14;
+    color: #94a3b8;
+    padding: 70px 20px 30px;
     font-family: Inter, system-ui;
   }
 
-  /* HEADING */
-  .trust-title {
-    font-size: 38px;
-    margin-bottom: 40px;
-  }
-
-  .trust-title span {
-    color: #2dd4bf;
-  }
-
-  /* TRUST POINTS */
-  .trust-points {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 18px;
-    max-width: 900px;
-    margin: 0 auto 60px;
-  }
-
-  .trust-points div {
-    background: #0e1a2d;
-    border: 1px solid rgba(45, 212, 191, 0.3);
-    padding: 12px 18px;
-    border-radius: 30px;
-    font-size: 14px;
-    opacity: 0.9;
-  }
-
-  /* ANALYST GRID */
-  .analyst-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 25px;
-    max-width: 1000px;
+  .fx-footer-wrap {
+    max-width: 1200px;
     margin: auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+    gap: 40px;
   }
 
-  /* CARD */
-  .analyst-card {
-    background: linear-gradient(180deg, #0e1a2d, #0a1426);
-    border: 1px solid rgba(45, 212, 191, 0.25);
-    border-radius: 20px;
-    padding: 30px;
-    position: relative;
+  /* BRAND */
+  .fx-logo {
+    width: 140px;
+    margin-bottom: 14px;
   }
 
-  /* glass shine */
-  .analyst-card::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      120deg,
-      transparent,
-      rgba(255, 255, 255, 0.05),
-      transparent
-    );
-    opacity: 0.4;
-  }
-
-  .analyst-card img {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-  }
-
-  .analyst-card h4 {
-    margin: 10px 0 5px;
-  }
-
-  .analyst-card p {
+  .fx-desc {
+    font-size: 14px;
     opacity: 0.7;
+    margin-bottom: 12px;
+  }
+
+  .fx-mail {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  /* SOCIALS (MATCH DESIGN) */
+  .fx-socials {
+    display: flex;
+    gap: 12px;
+  }
+
+  .fx-socials a {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+    transition: 0.25s;
+  }
+  .fx-socials img {
+    width: 40px;
+    height: 28px;
+    object-fit: contain;
+  }
+
+  .fx-socials a:hover {
+    transform: translateY(-2px);
+  }
+
+  /* COLUMNS */
+  .fx-col h4 {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 14px;
+  }
+
+  .fx-col a {
+    display: block;
+    text-decoration: none;
+    color: #94a3b8;
     font-size: 14px;
     margin-bottom: 10px;
   }
 
-  /* VERIFIED BADGE */
-  .verify {
-    display: inline-block;
-    background: #2dd4bf;
-    color: #042f2e;
-    padding: 6px 12px;
-    border-radius: 20px;
+  .fx-col a:hover {
+    color: #1affb2;
+  }
+
+  /* STORE BADGES */
+  .fx-badge {
+    height: 42px;
+    margin-bottom: 12px;
+  }
+
+  /* BOTTOM */
+  .fx-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin-top: 40px;
+    padding-top: 25px;
+    text-align: center;
+  }
+
+  .fx-note {
+    max-width: 750px;
+    margin: auto;
     font-size: 12px;
-    font-weight: 600;
+    opacity: 0.55;
+    line-height: 1.6;
+  }
+
+  .fx-copy {
+    margin-top: 12px;
+    font-size: 12px;
+    opacity: 0.5;
+  }
+
+  /* MOBILE */
+  @media (max-width: 900px) {
+    .fx-footer-wrap {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 </style>
 
-<!-- ==============TRUST & AUTHORITY SECTION================   -->
+
+  <!-- =========== Footer ===========  --
