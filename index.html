@@ -399,8 +399,42 @@
         </div>
       </div>
     </section>
+    <script>
+      const polyline = document.querySelector(".trend");
+
+      function moveChart() {
+        let points = polyline
+          .getAttribute("points")
+          .split(" ")
+          .map((p) => p.split(",").map(Number));
+
+        // shift left (remove first point)
+        points.shift();
+
+        // generate new last point
+        const lastX = points[points.length - 1][0];
+        const newY = Math.floor(Math.random() * 60) + 20; // 20–80 range
+
+        points.push([lastX + 40, newY]);
+
+        // normalize X positions so SVG width stays consistent
+        points = points.map((p, i) => [i * 40, p[1]]);
+
+        polyline.setAttribute(
+          "points",
+          points.map((p) => p.join(",")).join(" "),
+        );
+      }
+
+      // move every 10 seconds
+      setInterval(moveChart, 10000);
+    </script>
 
     <style>
+      .trend {
+        transition: all 0.8s ease;
+      }
+
       .ps-section {
         background: radial-gradient(circle at top, #0f1b33, #050b18);
         padding: 100px 20px;
@@ -2274,5 +2308,353 @@
     </style>
 
     <!-- =========== Footer ===========  -->
+    <style>
+      /* ============================= */
+      /* GLOBAL ELEMENTOR SAFE FIXES */
+      /* ============================= */
+
+      * {
+        box-sizing: border-box;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      section {
+        overflow: hidden;
+      }
+
+      /* ============================= */
+      /* ===== TABLET FIXES ===== */
+      /* ============================= */
+
+      @media (max-width: 1024px) {
+        /* HERO */
+
+        .fh-container {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .fh-left h1 {
+          font-size: 40px;
+        }
+
+        .fh-sub {
+          font-size: 18px;
+        }
+
+        .fh-right img {
+          max-width: 70%;
+          transform: none;
+        }
+
+        .fh-trust-strip {
+          width: 100%;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+
+        /* PROBLEM SOLUTION */
+
+        .ps-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .ps-right {
+          text-align: center;
+        }
+
+        .confusion-visual img {
+          width: 100%;
+        }
+
+        .thought {
+          font-size: 12px;
+        }
+
+        /* CORE */
+
+        .core-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .core-card {
+          max-width: 700px;
+          margin: auto;
+          transform: none !important;
+          opacity: 1 !important;
+        }
+
+        /* STEPS */
+
+        .steps {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .step::after {
+          display: none;
+        }
+
+        /* PRICING */
+
+        .fp-row {
+          flex-wrap: wrap;
+          overflow: visible;
+        }
+
+        .fp-card {
+          width: 320px;
+        }
+
+        /* FOOTER */
+
+        .fx-footer-wrap {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      /* ============================= */
+      /* ===== MOBILE FIXES ===== */
+      /* ============================= */
+
+      @media (max-width: 768px) {
+        /* HERO */
+
+        .finlily-hero {
+          padding: 60px 16px;
+        }
+
+        .fh-left h1 {
+          font-size: 26px;
+        }
+
+        .fh-sub {
+          font-size: 14px;
+        }
+
+        .fh-tag {
+          font-size: 12px;
+        }
+
+        .store-buttons {
+          flex-direction: column;
+          width: 100%;
+        }
+
+        .store-btn {
+          width: 100%;
+          justify-content: center;
+          padding: 14px;
+        }
+
+        .store-btn .text {
+          font-size: 16px;
+        }
+
+        .fh-right img {
+          max-width: 85%;
+        }
+
+        /* TRUST STRIP */
+
+        .fh-trust-strip {
+          flex-direction: column;
+        }
+
+        .sep {
+          display: none;
+        }
+
+        /* PROBLEM SOLUTION */
+
+        .ps-heading {
+          font-size: 26px;
+        }
+
+        .confusion-visual {
+          width: 220px;
+        }
+
+        .t3,
+        .t4 {
+          display: none;
+        }
+
+        .pain-points {
+          grid-template-columns: 1fr;
+        }
+
+        /* CORE */
+
+        .core-heading {
+          font-size: 26px;
+        }
+
+        .core-card {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .card-image {
+          width: 100%;
+          height: 160px;
+        }
+
+        .card-content {
+          width: 100%;
+        }
+
+        /* HOW */
+
+        .how-heading {
+          font-size: 26px;
+        }
+
+        .steps {
+          flex-direction: column;
+        }
+
+        .step {
+          width: 100%;
+          max-width: 420px;
+          display: flex;
+          text-align: left;
+          gap: 14px;
+          padding: 16px;
+          background: linear-gradient(145deg, #111a2e, #0c1426);
+          border-radius: 16px;
+        }
+
+        .icon {
+          width: 48px;
+          height: 48px;
+          font-size: 22px;
+        }
+
+        .step:not(:last-child)::after {
+          content: "↓";
+          display: block;
+          text-align: center;
+          font-size: 24px;
+          color: #1affb2;
+        }
+
+        /* PRICING */
+
+        .fp-title {
+          font-size: 26px;
+        }
+
+        .fp-sub {
+          font-size: 16px;
+        }
+
+        .fp-card {
+          width: 100%;
+          max-width: 380px;
+          margin: auto;
+        }
+
+        /* HOT CARD */
+
+        .hot-wrap h2 {
+          font-size: 26px;
+        }
+
+        .hot-wrap p {
+          font-size: 16px;
+        }
+
+        /* TRUST */
+
+        .trust-title {
+          font-size: 26px;
+        }
+
+        .trust-points {
+          gap: 12px;
+        }
+
+        .trust-points div {
+          font-size: 12px;
+          padding: 10px 14px;
+        }
+
+        /* FAQ */
+
+        .fx-top h2 {
+          font-size: 24px;
+        }
+
+        .fx-wrap {
+          gap: 30px;
+        }
+
+        /* FINAL CTA */
+
+        .fx-final-cta h2 {
+          font-size: 26px;
+        }
+
+        .fx-downloads {
+          flex-direction: column;
+        }
+
+        .fx-dl-btn {
+          width: 100%;
+          justify-content: center;
+        }
+
+        /* FOOTER */
+
+        .fx-footer-wrap {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .fx-socials {
+          justify-content: center;
+        }
+      }
+
+      /* ============================= */
+      /* SMALL PHONE FIX */
+      /* ============================= */
+
+      @media (max-width: 420px) {
+        .fh-left h1 {
+          font-size: 22px;
+        }
+
+        .ps-heading {
+          font-size: 22px;
+        }
+
+        .core-heading {
+          font-size: 22px;
+        }
+
+        .how-heading {
+          font-size: 22px;
+        }
+
+        .fp-title {
+          font-size: 22px;
+        }
+
+        .trust-title {
+          font-size: 22px;
+        }
+
+        .fx-top h2 {
+          font-size: 20px;
+        }
+      }
+    </style>
   </body>
 </html>
