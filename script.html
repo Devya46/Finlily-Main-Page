@@ -1,141 +1,266 @@
-<!-- ===== FINLILY PREMIUM HEADER ===== -->
-<header class="site-header">
-  <div class="header-inner">
-    <!-- LOGO -->
-    <div class="logo">
-      <img
-        src="https://framerusercontent.com/images/Pkydub3sliGjbNVrjmDqbG939Ag.png"
-        alt="Finlily Logo"
-      />
-    </div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- =========== CORE SERVICES SECTION ======== -->
+    <section class="core-section">
+      <div class="core-container">
+        <h2 class="core-heading">
+          What You Get Inside <span>Finlily</span>...
+        </h2>
 
-    <!-- NAV -->
-    <nav class="header-nav">
-      <a href="#">Learn</a>
-      <a href="#SUBSCRIPTION-Section">Pricing</a>
-      <a href="#">Support</a>
-    </nav>
+        <div class="core-grid">
+          <!-- CARD 1 -->
+          <div class="core-card side">
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1560221328-12fe60f83ab8?w=600&auto=format&fit=crop&q=60"
+              />
+            </div>
 
-    <!-- RIGHT SIDE -->
-    <div class="header-right">
-      <!-- TRUST -->
-      <div class="header-trust">✔ SEBI Registered • 10K+ Investors</div>
+            <div class="card-content">
+              <h3>Dynamic Learn</h3>
+              <ul>
+                <li>Learn from real trades</li>
+                <li>Executed trade case studies</li>
+                <li>Entry & exit psychology</li>
+                <li>Why each trade was taken</li>
+                <li>P&L examples</li>
+                <li>Structured lessons</li>
+              </ul>
+            </div>
+          </div>
 
-      <!-- SECONDARY CTA -->
-      <a href="#SUBSCRIPTION-Section" class="view-btn"> View Plans </a>
+          <!-- FEATURED -->
+          <div class="core-card featured">
+            <div class="recommended">⭐ Recommended</div>
 
-      <!-- PRIMARY CTA -->
-      <a href="#SUBSCRIPTION-Section" class="start-btn"> Start Now </a>
-    </div>
-  </div>
-</header>
+            <div class="price">₹69</div>
 
-<style>
-  /* HEADER */
-  .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    background: #09111e;
-    border-bottom: 1px solid rgba(45, 212, 191, 0.15);
-  }
+            <div class="card-content">
+              <h3>Trial Call</h3>
+              <ul>
+                <li>Unlock 1 stock recommendation</li>
+                <li>No subscription needed</li>
+                <li>Evaluate quality first</li>
+                <li>Try before subscribing</li>
+              </ul>
 
-  /* INNER */
-  .header-inner {
-    max-width: 1400px;
-    margin: auto;
-    padding: 14px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+              <a href="#" class="core-btn">Download Finlily App</a>
+            </div>
+          </div>
 
-  /* LOGO */
-  .logo img {
-    height: 42px;
-  }
+          <!-- CARD 3 -->
+          <div class="core-card side">
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1200&auto=format&fit=crop"
+              />
+            </div>
 
-  /* NAV */
-  .header-nav {
-    display: flex;
-    gap: 28px;
-  }
+            <div class="card-content">
+              <h3>SEBI RA Recommendations</h3>
+              <ul>
+                <li>Weekly swing trade calls</li>
+                <li>1–3 month holding</li>
+                <li>Detailed reports</li>
+                <li>Clear reasoning</li>
+                <li>By SEBI RAs</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  .header-nav a {
-    color: #cbd5e1;
-    text-decoration: none;
-    font-size: 15px;
-  }
+    <style>
+      .core-section {
+        background: radial-gradient(circle at top, #0f1b33, #050b18);
+        padding: 110px 20px;
+        font-family: Inter, Arial;
+        color: white;
+      }
 
-  .header-nav a:hover {
-    color: #1affb2;
-  }
+      .core-container {
+        max-width: 1100px;
+        margin: auto;
+      }
 
-  /* RIGHT SIDE */
-  .header-right {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
+      .core-heading {
+        text-align: center;
+        font-size: 42px;
+        margin-bottom: 70px;
+      }
 
-  /* TRUST */
-  .header-trust {
-    color: #1affb2;
-    font-size: 13px;
-    white-space: nowrap;
-  }
+      .core-heading span {
+        color: #1affb2;
+      }
 
-  /* VIEW BUTTON */
-  .view-btn {
-    padding: 10px 18px;
-    border-radius: 30px;
-    border: 1px solid #2dd4bf;
-    color: #2dd4bf;
-    text-decoration: none;
-    font-size: 14px;
-  }
+      .core-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.1fr 1fr;
+        gap: 30px;
+        align-items: center;
+      }
 
-  .view-btn:hover {
-    background: #2dd4bf;
-    color: #042f2e;
-  }
+      /* CARDS */
+      .core-card {
+        background: black;
+        border-radius: 22px;
+        padding: 30px;
+        border: 1px solid rgba(14, 66, 222, 0.95);
+        position: relative;
+        transition: 0.25s;
+      }
 
-  /* START BUTTON */
-  .start-btn {
-    background: #2dd4bf;
-    color: #042f2e;
-    padding: 12px 26px;
-    border-radius: 30px;
-    font-weight: 600;
-    text-decoration: none;
-  }
+      .core-card.side {
+        opacity: 0.8;
+        transform: scale(0.97);
+      }
 
-  .start-btn:hover {
-    background: #1c9b94;
-    color: white;
-  }
+      .core-card.featured {
+        background: linear-gradient(180deg, #182d4e, #000);
+        transform: scale(1.05);
+      }
 
-  /* MOBILE */
-  @media (max-width: 900px) {
-    .header-nav {
-      display: none;
-    }
+      .core-card.featured:hover {
+        border: 1px solid #2dd4bf;
+        box-shadow: 0 0 25px rgba(45, 212, 191, 0.25);
+      }
 
-    .header-trust {
-      display: none;
-    }
+      /* BADGE */
+      .recommended {
+        position: absolute;
+        top: -14px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #1affb2;
+        color: #052d25;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+      }
 
-    .view-btn {
-      display: none;
-    }
+      /* PRICE */
+      .price {
+        font-size: 42px;
+        font-weight: 700;
+        color: #1affb2;
+        text-align: center;
+        margin-bottom: 10px;
+      }
 
-    .start-btn {
-      padding: 10px 18px;
-      font-size: 14px;
-    }
+      /* IMAGE */
+      .card-image {
+        height: 150px;
+        border-radius: 14px;
+        overflow: hidden;
+        margin-bottom: 18px;
+      }
 
-    .logo img {
-      height: 32px;
-    }
-  }
-</style>
+      .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* LIST */
+      .core-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .core-card li {
+        margin-bottom: 10px;
+        padding-left: 18px;
+        position: relative;
+      }
+
+      .core-card li:before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        background: #1affb2;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        top: 7px;
+      }
+
+      /* BUTTON */
+      .core-btn {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        background: #2dd4bf;
+        color: #042f2e;
+        padding: 14px;
+        border-radius: 12px;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .core-btn:hover {
+        background: #1c9b94;
+        color: white;
+      }
+
+      /* ===== TABLET ===== */
+      @media (max-width: 1024px) {
+        .core-heading {
+          font-size: 32px;
+          margin-bottom: 40px;
+        }
+
+        .core-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .core-card {
+          max-width: 620px;
+          margin: auto;
+          transform: none !important;
+          opacity: 1 !important;
+        }
+      }
+
+      /* ===== MOBILE ===== */
+      @media (max-width: 768px) {
+        .core-section {
+          padding: 70px 16px;
+        }
+
+        .core-heading {
+          font-size: 26px;
+        }
+
+        .card-image {
+          height: 170px;
+        }
+
+        .core-card {
+          padding: 22px;
+        }
+
+        .core-card h3 {
+          font-size: 18px;
+        }
+
+        .core-card li {
+          font-size: 14px;
+        }
+
+        .price {
+          font-size: 32px;
+          margin-top: 20px;
+        }
+      }
+    </style>
+  </body>
+</html>

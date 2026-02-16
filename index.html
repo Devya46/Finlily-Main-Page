@@ -6,7 +6,7 @@
     <title>FINLILY</title>
   </head>
   <body>
-    <!-- ==========Header===========  -->
+    <!-- ========== HEADER ========== -->
     <header class="site-header">
       <div class="header-inner">
         <!-- LOGO -->
@@ -16,10 +16,69 @@
             alt="Logo"
           />
         </div>
-        <!-- SECONDARY CTA -->
-        <!-- <a href="#SUBSCRIPTION-Section" class="view-btn"> View Plans </a> -->
-        <!-- CTA BUTTON -->
-        <a href="#HOT-calls-section" class="start-btn">Start Now</a>
+
+        <!-- DESKTOP BUTTON -->
+        <a href="#HOT-calls-section" class="start-btn desktop-btn">Start Now</a>
+
+        <!-- HAMBURGER -->
+        <div class="hamburger" id="hamburger">☰</div>
+      </div>
+
+      <!-- MOBILE MENU -->
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#HOT-calls-section" class="menu-btn">Start Now</a>
+
+        <a
+          href="https://apps.apple.com/in/app/finlily-sebi-ra-stock-calls/id6741014770"
+          target="_blank"
+          class="menu-btn"
+        >
+          Download on App Store
+        </a>
+
+        <a
+          href="https://play.google.com/store/apps/details?id=com.finlily"
+          target="_blank"
+          class="menu-btn"
+        >
+          Get it on Play Store
+        </a>
+
+        <a href="#contact" class="menu-btn">Contact Us</a>
+
+        <!-- SOCIAL -->
+        <div class="follow">
+          <p>Follow us</p>
+
+          <div class="socials">
+            <a
+              href="https://www.linkedin.com/company/finlily-technology/"
+              target="_blank"
+            >
+              <img
+                src="https://framerusercontent.com/images/4I0uO5WpISDay2aPXHK8Kb9HAc.svg"
+              />
+            </a>
+
+            <a
+              href="https://www.facebook.com/people/Finlily-Technology/61559080864349/"
+              target="_blank"
+            >
+              <img
+                src="https://framerusercontent.com/images/yzxNInoSyounvdXiRvGHQXZFYc.png"
+              />
+            </a>
+
+            <a
+              href="https://www.instagram.com/finlilytechnology/"
+              target="_blank"
+            >
+              <img
+                src="https://framerusercontent.com/images/e29n3ck4a9kvBPgl9YhDr9UrVe0.svg"
+              />
+            </a>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -30,74 +89,152 @@
         top: 0;
         width: 100%;
         z-index: 999;
-
         background: #09111e;
-        backdrop-filter: blur(10px);
         border-bottom: 1px solid rgba(45, 212, 191, 0.15);
       }
 
-      /* INNER LAYOUT */
+      /* INNER */
       .header-inner {
         max-width: 1410px;
         margin: auto;
         padding: 14px 20px;
-
         display: flex;
-        align-items: center;
         justify-content: space-between;
+        align-items: center;
       }
 
       /* LOGO */
       .logo img {
         height: 43px;
-        width: auto;
         display: block;
       }
 
-      /* button  */
+      /* DESKTOP START BTN */
       .start-btn {
         background: #2dd4bf;
         color: #042f2e;
-        padding: 18px 50px;
+        padding: 16px 40px;
         border-radius: 30px;
         font-weight: 600;
-        font-size: 18px;
+        font-size: 16px;
         text-decoration: none;
-        transition: 0.25s ease;
+        transition: 0.25s;
       }
 
       .start-btn:hover {
-        transform: translateY(-2px);
         background: #1c9b94;
         color: white;
+        transform: translateY(-2px);
+      }
+
+      /* HAMBURGER */
+      .hamburger {
+        display: none;
+        font-size: 28px;
+        color: white;
+        cursor: pointer;
+      }
+
+      /* MOBILE MENU */
+      .mobile-menu {
+        display: none;
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px;
+        background: #08101c;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        animation: slideDown 0.3s ease;
+      }
+
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .mobile-menu.active {
+        display: flex;
+      }
+
+      /* MENU BUTTONS */
+      .menu-btn {
+        background: #111827;
+        color: white;
+        padding: 14px;
+        border-radius: 12px;
+        text-decoration: none;
+        text-align: center;
+        font-size: 15px;
+        transition: 0.25s;
+      }
+
+      /* HOVER EFFECT (same feel as Start Now) */
+      .menu-btn:hover {
+        background: #2dd4bf;
+        color: #042f2e;
+        transform: translateY(-2px);
+      }
+
+      /* FOLLOW */
+      .follow {
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      .follow p {
+        color: #9ca3af;
+        margin-bottom: 8px;
+      }
+
+      .socials {
+        display: flex;
+        justify-content: center;
+        gap: 18px;
+      }
+
+      .socials img {
+        width: 26px;
+        height: 26px;
       }
 
       /* RESPONSIVE */
       @media (max-width: 768px) {
-        .header-inner {
-          padding: 12px 16px;
+        .desktop-btn {
+          display: none;
+        }
+
+        .hamburger {
+          display: block;
         }
 
         .logo img {
-          height: 28px;
-        }
-
-        .start-btn {
-          padding: 9px 16px;
-          font-size: 13px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .start-btn {
-          padding: 8px 14px;
-          font-size: 12px;
+          height: 32px;
         }
       }
     </style>
 
-    <!-- ========= HEADER===========   -->
-    <!-- ========== hero Section============  -->
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      hamburger.addEventListener("click", () => {
+        mobileMenu.classList.toggle("active");
+      });
+
+      /* AUTO CLOSE ON CLICK */
+      document.querySelectorAll(".menu-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          mobileMenu.classList.remove("active");
+        });
+      });
+    </script>
+    <!-- ============ HEADER ============= -->
+    <!-- ========== HERO SECTION ========== -->
     <section class="finlily-hero">
       <div class="fh-container">
         <!-- LEFT -->
@@ -115,6 +252,7 @@
             Experienced SEBI Registered Research Analysts
           </p>
 
+          <!-- TRUST STRIP -->
           <div class="fh-trust-strip">
             <div class="trust-item">
               🎓 <span>In association with <b>IIM Kashipur</b></span>
@@ -218,6 +356,7 @@
         margin: 16px 0;
       }
 
+      /* TRUST STRIP DESKTOP */
       .fh-trust-strip {
         display: flex;
         align-items: center;
@@ -253,76 +392,50 @@
       /* STORE BUTTONS */
       .store-buttons {
         display: flex;
-        gap: 25px;
-        flex-wrap: wrap;
+        gap: 18px;
       }
 
       .store-btn {
         display: flex;
         align-items: center;
-        gap: 14px;
-        padding: 18px 28px;
+        gap: 12px;
+        padding: 14px 22px;
         color: white;
         text-decoration: none;
         border-radius: 14px;
         border: 1px solid rgba(80, 120, 255, 0.6);
         background: linear-gradient(180deg, #0c1226, #0a0f1e);
-        box-shadow:
-          0 0 0 1px white,
-          0 10px 25px rgba(0, 0, 0, 0.6);
-        transition: 0.3s;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+        transition: 0.25s;
       }
 
       .store-btn:hover {
-        transform: translateY(-4px);
-        box-shadow:
-          0 0 20px rgba(80, 120, 255, 0.6),
-          0 10px 30px rgba(0, 0, 0, 0.8);
+        transform: translateY(-3px);
       }
 
       .store-icon {
-        width: 28px;
-        height: 28px;
-        object-fit: contain;
+        width: 24px;
+        height: 24px;
       }
 
       .store-btn .text {
         display: flex;
         flex-direction: column;
         font-weight: 600;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 1.1;
       }
 
       .store-btn small {
-        font-size: 12px;
+        font-size: 11px;
         opacity: 0.8;
       }
 
-      /* ======================= */
       /* ===== TABLET ===== */
-      /* ======================= */
-
       @media (max-width: 1024px) {
-        .finlily-hero {
-          padding: 70px 20px;
-        }
-
         .fh-container {
           flex-direction: column;
           text-align: center;
-          gap: 35px;
-        }
-
-        .fh-left h1 {
-          font-size: 50px;
-        }
-        .fh-tag {
-          font-size: 22px;
-        }
-
-        .fh-sub {
-          font-size: 20px;
         }
 
         .fh-right img {
@@ -331,33 +444,16 @@
         }
 
         .fh-trust-strip {
-          flex-wrap: wrap;
-          justify-content: center;
-          width: 100%;
-          font-size: 18px;
+          margin-left: auto;
+          margin-right: auto;
         }
 
         .store-buttons {
           justify-content: center;
-          padding: 21px 36px;
-        }
-        .store-btn .text {
-          display: flex;
-          flex-direction: column;
-          font-weight: 600;
-          font-size: 26px;
-          line-height: 1.1;
-        }
-        .store-btn small {
-          font-size: 14px;
-          opacity: 0.8;
         }
       }
 
-      /* ======================= */
       /* ===== MOBILE ===== */
-      /* ======================= */
-
       @media (max-width: 768px) {
         .finlily-hero {
           padding: 55px 16px;
@@ -366,39 +462,47 @@
         .fh-left h1 {
           font-size: 28px;
         }
-
         .fh-sub {
           font-size: 14px;
         }
-
         .fh-tag {
-          font-size: 11px;
+          font-size: 12px;
         }
 
+        /* TRUST STRIP SIMPLE COLUMN */
         .fh-trust-strip {
           flex-direction: column;
           align-items: center;
-          font-size: 13px;
+          text-align: center;
+          gap: 10px;
+          width: 85%;
+          margin: 22px auto;
+          padding: 14px 16px;
         }
 
         .sep {
           display: none;
         }
 
+        .trust-item {
+          justify-content: center;
+          white-space: normal;
+        }
+
+        /* APP BUTTONS SIDE BY SIDE */
         .store-buttons {
-          flex-direction: column;
-          width: 100%;
-          gap: 14px;
+          justify-content: center;
+          gap: 12px;
         }
 
         .store-btn {
-          width: 100%;
+          flex: 1;
           justify-content: center;
-          padding: 16px;
+          padding: 12px 14px;
         }
 
         .store-btn .text {
-          font-size: 16px;
+          font-size: 14px;
         }
 
         .fh-right img {
@@ -408,7 +512,7 @@
     </style>
 
     <!-- ============ hero Section======  -->
-    <!-- ========Problem → Solution section=======  -->
+    <!-- ======== Problem → Solution section ======== -->
     <section class="ps-section">
       <div class="ps-container">
         <h2 class="ps-heading">
@@ -431,23 +535,14 @@
 
             <div class="pain-points">
               <div class="pain">
-                <span class="pain-icon">⚠️</span>
-                <span>Unverified Telegram tips</span>
+                <span>⚠️</span><span>Unverified Telegram tips</span>
               </div>
-
               <div class="pain">
-                <span class="pain-icon">📉</span>
-                <span>No research or logic</span>
+                <span>📉</span><span>No research or logic</span>
               </div>
-
+              <div class="pain"><span>🎯</span><span>Only guessing</span></div>
               <div class="pain">
-                <span class="pain-icon">🎯</span>
-                <span>Only guessing</span>
-              </div>
-
-              <div class="pain">
-                <span class="pain-icon">💸</span>
-                <span>High-risk decisions</span>
+                <span>💸</span><span>High-risk decisions</span>
               </div>
             </div>
           </div>
@@ -467,16 +562,7 @@
             </p>
 
             <div class="dashboard">
-              <!-- CARD
-              <div class="dash-card">
-                <div>Stock: INFY</div>
-                <div>Entry: ₹1,420</div>
-                <div>Target: ₹1,560</div>
-                <div class="profit">+9.8%</div>
-              </div> -->
-
-              <!-- TRADINGVIEW WIDGET -->
-              <div class="chart tv-wrap">
+              <div class="chart">
                 <div class="tradingview-widget-container">
                   <div class="tradingview-widget-container__widget"></div>
 
@@ -485,29 +571,14 @@
                     async
                   >
                     {
-                      "lineWidth": 2,
-                      "lineType": 0,
-                      "chartType": "area",
-                      "fontColor": "rgb(106,109,120)",
-                      "gridLineColor": "rgba(242,242,242,0.06)",
-                      "volumeUpColor": "rgba(34,171,148,0.5)",
-                      "volumeDownColor": "rgba(247,82,95,0.5)",
-                      "backgroundColor": "#0c1426",
-                      "widgetFontColor": "#DBDBDB",
-                      "upColor": "#22ab94",
-                      "downColor": "#f7525f",
-                      "borderUpColor": "#22ab94",
-                      "borderDownColor": "#f7525f",
-                      "wickUpColor": "#22ab94",
-                      "wickDownColor": "#f7525f",
-                      "colorTheme": "dark",
-                      "isTransparent": true,
-                      "locale": "en",
-                      "autosize": true,
-                      "symbols": [["BSE:SENSEX|1D"]],
-                      "dateRanges": ["1d|1","1m|30","3m|60","12m|1D","60m|1W","all|1M"],
-                      "fontSize": "10",
-                      "height": "100%"
+                      "lineWidth":2,
+                      "chartType":"area",
+                      "backgroundColor":"#0c1426",
+                      "widgetFontColor":"#DBDBDB",
+                      "colorTheme":"dark",
+                      "autosize":true,
+                      "symbols":[["BSE:SENSEX|1D"]],
+                      "height":"100%"
                     }
                   </script>
                 </div>
@@ -534,7 +605,7 @@
       .ps-heading {
         text-align: center;
         font-size: 40px;
-        margin-bottom: 70px;
+        margin-bottom: 60px;
       }
       .ps-heading span {
         color: #1affb2;
@@ -550,25 +621,20 @@
       /* LEFT */
       .confusion-visual {
         position: relative;
-        width: 400px;
-        margin: auto 76px 30;
-        display: flex;
-        justify-content: center;
-        left: 58px;
-        top: -33px;
+        max-width: 420px;
+        margin: auto;
       }
       .confusion-visual img {
-        width: 135%;
+        width: 100%;
         border-radius: 20px;
-        filter: brightness(0.85);
         box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
-        background: #efc87e9a;
       }
 
+      /* THOUGHTS */
       .thought {
         position: absolute;
         background: #111a2e;
-        padding: 8px 14px;
+        padding: 8px 12px;
         border-radius: 12px;
         font-size: 13px;
         border: 1px solid rgba(255, 255, 255, 0.08);
@@ -580,45 +646,43 @@
       }
 
       .t1 {
-        top: 10%;
-        left: -46px;
+        top: 8%;
+        left: -30px;
       }
       .t2 {
-        top: 37%;
-        right: -35px;
+        top: 30%;
+        right: -30px;
       }
       .t3 {
-        top: 45%;
-        left: -80px;
+        top: 50%;
+        left: -40px;
       }
       .t4 {
-        top: 63%;
-        right: -93px;
+        top: 65%;
+        right: -40px;
       }
       .t5 {
-        bottom: 4%;
-        left: -21px;
-        font-size: 16px;
+        bottom: 8%;
+        left: -10px;
       }
       .t6 {
-        bottom: 5%;
+        bottom: 8%;
         right: -10px;
       }
 
       @keyframes float {
         50% {
-          transform: translateY(-8px);
+          transform: translateY(-6px);
         }
       }
 
+      /* PAIN */
       .pain-points {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 16px;
-        max-width: 520px;
-        margin: auto;
+        margin-top: 30px;
       }
-
       .pain {
         display: flex;
         gap: 12px;
@@ -634,6 +698,7 @@
         padding: 40px;
         border-radius: 22px;
         border: 1px solid rgba(26, 255, 178, 0.2);
+        text-align: center;
       }
 
       .solution-badge {
@@ -654,28 +719,24 @@
         background: #050b18;
         padding: 20px;
         border-radius: 16px;
-      }
-
-      .dash-card {
-        background: linear-gradient(145deg, #101a30, #0c1426);
-        padding: 18px;
-        border-radius: 14px;
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 15px;
-      }
-
-      .profit {
-        color: #1affb2;
+        margin-top: 20px;
+        width: 100%;
       }
 
       .chart {
         height: 260px;
         border-radius: 14px;
         overflow: hidden;
-        padding: 0; /* remove inner spacing */
         background: #0c1426;
-        position: relative;
+        width: 100%;
+      }
+
+      /* WIDGET */
+      .tradingview-widget-container,
+      .tradingview-widget-container__widget,
+      .tradingview-widget-container iframe {
+        width: 100% !important;
+        height: 100% !important;
       }
 
       /* TABLET */
@@ -693,13 +754,9 @@
         .ps-heading {
           font-size: 26px;
         }
-        .pain-points {
+        /* .pain-points {
           grid-template-columns: 1fr;
-        }
-        .dash-card {
-          flex-direction: column;
-          gap: 6px;
-        }
+        } */
         .chart {
           height: 220px;
         }
@@ -707,25 +764,52 @@
         .t4 {
           display: none;
         }
+        .thought {
+          font-size: 12px;
+        }
       }
-      .tradingview-widget-container {
-        width: 100% !important;
-        height: 100% !important;
+      /* ===== TABLET & MOBILE FIX ===== */
+      @media (max-width: 1024px) {
+        .ps-right {
+          padding: 40px 0 0;
+          overflow: hidden;
+        }
+
+        /* keep text padded */
+        .ps-right h3,
+        .ps-right p,
+        .solution-badge {
+          padding-left: 24px;
+          padding-right: 24px;
+        }
+
+        /* dashboard edge-to-edge */
+        .dashboard {
+          width: 100%;
+          padding: 0;
+          margin-top: 20px;
+          border-radius: 0 0 22px 22px;
+        }
+
+        /* chart full width */
+        .chart {
+          width: 100%;
+          height: 240px;
+          border-radius: 0 0 22px 22px;
+          overflow: hidden;
+        }
       }
 
-      .tradingview-widget-container__widget {
-        width: 100% !important;
-        height: 100% !important;
-      }
-
-      .tradingview-widget-container iframe {
-        width: 100% !important;
-        height: 100% !important;
+      /* EXTRA SMALL MOBILE */
+      @media (max-width: 768px) {
+        .chart {
+          height: 220px;
+        }
       }
     </style>
 
     <!-- =======Problem → Solution section======= -->
-    <!-- =========== CORE SERVICES SECTION ========  -->
+    <!-- =========== CORE SERVICES SECTION ======== -->
     <section class="core-section">
       <div class="core-container">
         <h2 class="core-heading">
@@ -826,24 +910,26 @@
         align-items: center;
       }
 
-      /* CARD */
+      /* CARDS */
       .core-card {
         background: black;
         border-radius: 22px;
         padding: 30px;
         border: 1px solid rgba(14, 66, 222, 0.95);
         position: relative;
+        transition: 0.25s;
       }
 
       .core-card.side {
-        opacity: 0.75;
-        transform: scale(0.95);
+        opacity: 0.8;
+        transform: scale(0.97);
       }
 
       .core-card.featured {
         background: linear-gradient(180deg, #182d4e, #000);
         transform: scale(1.05);
       }
+
       .core-card.featured:hover {
         border: 1px solid #2dd4bf;
         box-shadow: 0 0 25px rgba(45, 212, 191, 0.25);
@@ -921,18 +1007,14 @@
         border-radius: 12px;
         font-weight: 600;
         text-decoration: none;
-        margin-top: 20px;
-        cursor: pointer;
       }
+
       .core-btn:hover {
         background: #1c9b94;
         color: white;
       }
 
-      /* ========================= */
-      /* ===== TABLET & PHONE ===== */
-      /* ========================= */
-
+      /* ===== TABLET ===== */
       @media (max-width: 1024px) {
         .core-heading {
           font-size: 32px;
@@ -941,42 +1023,32 @@
 
         .core-grid {
           grid-template-columns: 1fr;
-          gap: 30px;
         }
 
-        /* Horizontal cards */
         .core-card {
-          display: flex;
-          align-items: center;
-          gap: 20px;
-          padding: 20px;
-          max-width: 700px;
+          max-width: 620px;
           margin: auto;
+          transform: none !important;
+          opacity: 1 !important;
+        }
+      }
+
+      /* ===== MOBILE ===== */
+      @media (max-width: 768px) {
+        .core-section {
+          padding: 70px 16px;
         }
 
-        .core-card.side {
-          opacity: 1;
-          transform: none;
-        }
-
-        .core-card.featured {
-          transform: none;
+        .core-heading {
+          font-size: 26px;
         }
 
         .card-image {
-          width: 40%;
-          height: 140px;
-          margin-bottom: 0;
-          flex-shrink: 0;
+          height: 170px;
         }
 
-        .card-content {
-          width: 60%;
-        }
-
-        .price {
-          font-size: 28px;
-          margin-bottom: 6px;
+        .core-card {
+          padding: 22px;
         }
 
         .core-card h3 {
@@ -987,13 +1059,12 @@
           font-size: 14px;
         }
 
-        .core-btn {
-          padding: 12px;
-          font-size: 14px;
+        .price {
+          font-size: 32px;
+          margin-top: 20px;
         }
       }
     </style>
-
     <!-- ======= CORE SERVICES SECTION ========  -->
     <!-- =========== HOW IT WORKS SECTION ========   -->
     <section class="how-section">
@@ -1611,50 +1682,51 @@
         <div>✔ Structured Swing Trading Framework</div>
       </div>
 
-      <!-- ANALYST SCROLL -->
       <div class="analyst-scroll">
-        <!-- CARD 1 (Google Verified) -->
+        <!-- CARD 1 -->
         <div class="analyst-card">
           <img
             class="verify-icon"
             src="https://cdn-icons-png.flaticon.com/512/300/300221.png"
           />
-
-          <img src="https://i.pravatar.cc/150?img=12" />
+          <img
+            src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?fit=crop&w=200&h=200&q=80"
+          />
           <h4>Rahul Sharma</h4>
           <p class="role">SEBI Registered RA</p>
-
           <p class="quote">
             “15+ years analyzing Indian markets. Focused on risk-managed swing
-            trading strategies.”
+            strategies.”
           </p>
         </div>
 
-        <!-- CARD 2 (Finlily Verified) -->
+        <!-- CARD 2 -->
         <div class="analyst-card">
           <img
             class="verify-icon"
             src="https://cdn-icons-png.flaticon.com/512/300/300221.png"
           />
-
-          <img src="https://i.pravatar.cc/150?img=32" />
-          <h4>Anita Mehta</h4>
+          <img
+            src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?fit=crop&w=200&h=200&q=80"
+          />
+          <h4>Anil Mehta</h4>
           <p class="role">Equity Research Analyst</p>
-
-          <p class="quote">
-            “Specialist in fundamentals & earnings plays. Known for
-            high-accuracy research calls.”
-          </p>
+          <p class="quote">“Specialist in fundamentals & earnings plays.”</p>
         </div>
 
         <!-- CARD 3 -->
         <div class="analyst-card">
-          <img src="https://i.pravatar.cc/150?img=5" />
-          <h4>Karan Patel</h4>
+          <img
+            class="verify-icon"
+            src="https://cdn-icons-png.flaticon.com/512/300/300221.png"
+          />
+          <img
+            src="https://plus.unsplash.com/premium_photo-1691030256264-59cdf9414ed1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWFuJTIwZmFjZXN8ZW58MHx8MHx8fDA%3D"
+          />
+          <h4>Kiran Patel</h4>
           <p class="role">Swing Trading Expert</p>
-
           <p class="quote">
-            “Helps traders capture momentum swings. Simplifies complex setups.”
+            “Captures momentum swings using disciplined frameworks.”
           </p>
         </div>
 
@@ -1664,25 +1736,28 @@
             class="verify-icon"
             src="https://cdn-icons-png.flaticon.com/512/300/300221.png"
           />
-
-          <img src="https://i.pravatar.cc/150?img=20" />
-          <h4>Neha Gupta</h4>
+          <img
+            src="https://images.unsplash.com/photo-1615109398623-88346a601842?fit=crop&w=200&h=200&q=80"
+          />
+          <h4>Nandish Gupta</h4>
           <p class="role">Market Strategist</p>
-
           <p class="quote">
-            “Macro-driven strategy builder. Guides investors during volatility.”
+            “Macro-driven strategist guiding investors in volatility.”
           </p>
         </div>
 
         <!-- CARD 5 -->
         <div class="analyst-card">
-          <img src="https://i.pravatar.cc/150?img=15" />
+          <img
+            class="verify-icon"
+            src="https://cdn-icons-png.flaticon.com/512/300/300221.png"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?fit=crop&w=200&h=200&q=80"
+          />
           <h4>Arjun Verma</h4>
           <p class="role">Technical Analyst</p>
-
-          <p class="quote">
-            “Chart pattern specialist. Combines TA with volume insights.”
-          </p>
+          <p class="quote">“Chart pattern & volume analysis specialist.”</p>
         </div>
 
         <!-- CARD 6 -->
@@ -1691,14 +1766,13 @@
             class="verify-icon"
             src="https://cdn-icons-png.flaticon.com/512/300/300221.png"
           />
-
-          <img src="https://i.pravatar.cc/150?img=45" />
+          <img
+            src="https://plus.unsplash.com/premium_photo-1682098109069-0e49e3b42884?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aW5kaWFuJTIwcGVvcGxlfGVufDB8fDB8fHww"
+          />
           <h4>Sneha Iyer</h4>
           <p class="role">Derivatives Expert</p>
-
           <p class="quote">
-            “Options strategist with 12+ yrs experience. Focus on safe premium
-            strategies.”
+            “Options strategist focused on safe premium plays.”
           </p>
         </div>
       </div>
@@ -1837,7 +1911,7 @@
         opacity: 0.7;
         font-size: 14px;
         margin-bottom: 22px;
-        margin-top: -13px;
+        margin-top: 7px;
       }
 
       /* Experience Quote */
@@ -2572,12 +2646,14 @@
       * {
         box-sizing: border-box;
         scroll-behavior: smooth;
+        margin: 0;
+        padding: 0;
       }
 
       img {
         max-width: 100%;
         height: auto;
-        display: block;
+        /* display: block; */
       }
 
       section {
@@ -2699,7 +2775,7 @@
         }
 
         .store-buttons {
-          flex-direction: column;
+          /* flex-direction: column; */
           width: 100%;
         }
 
