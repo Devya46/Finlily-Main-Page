@@ -375,6 +375,7 @@
             </p>
 
             <div class="dashboard">
+              <!-- CARD -->
               <div class="dash-card">
                 <div>Stock: INFY</div>
                 <div>Entry: ₹1,420</div>
@@ -382,59 +383,50 @@
                 <div class="profit">+9.8%</div>
               </div>
 
-              <div class="chart">
-                <svg viewBox="0 0 300 100" class="chart-svg">
-                  <line x1="0" y1="20" x2="300" y2="20" class="grid" />
-                  <line x1="0" y1="50" x2="300" y2="50" class="grid" />
-                  <line x1="0" y1="80" x2="300" y2="80" class="grid" />
+              <!-- TRADINGVIEW WIDGET -->
+              <div class="chart tv-wrap">
+                <div class="tradingview-widget-container">
+                  <div class="tradingview-widget-container__widget"></div>
 
-                  <polyline
-                    points="0,70 40,60 80,65 120,40 160,50 200,30 240,35 300,15"
-                    class="trend"
-                  />
-                </svg>
+                  <script
+                    src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js"
+                    async
+                  >
+                    {
+                      "lineWidth": 2,
+                      "lineType": 0,
+                      "chartType": "area",
+                      "fontColor": "rgb(106,109,120)",
+                      "gridLineColor": "rgba(242,242,242,0.06)",
+                      "volumeUpColor": "rgba(34,171,148,0.5)",
+                      "volumeDownColor": "rgba(247,82,95,0.5)",
+                      "backgroundColor": "#0c1426",
+                      "widgetFontColor": "#DBDBDB",
+                      "upColor": "#22ab94",
+                      "downColor": "#f7525f",
+                      "borderUpColor": "#22ab94",
+                      "borderDownColor": "#f7525f",
+                      "wickUpColor": "#22ab94",
+                      "wickDownColor": "#f7525f",
+                      "colorTheme": "dark",
+                      "isTransparent": true,
+                      "locale": "en",
+                      "autosize": true,
+                      "symbols": [["BSE:SENSEX|1D"]],
+                      "dateRanges": ["1d|1","1m|30","3m|60","12m|1D","60m|1W","all|1M"],
+                      "fontSize": "10",
+                      "height": "100%"
+                    }
+                  </script>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <script>
-      const polyline = document.querySelector(".trend");
-
-      function moveChart() {
-        let points = polyline
-          .getAttribute("points")
-          .split(" ")
-          .map((p) => p.split(",").map(Number));
-
-        // shift left (remove first point)
-        points.shift();
-
-        // generate new last point
-        const lastX = points[points.length - 1][0];
-        const newY = Math.floor(Math.random() * 60) + 20; // 20–80 range
-
-        points.push([lastX + 40, newY]);
-
-        // normalize X positions so SVG width stays consistent
-        points = points.map((p, i) => [i * 40, p[1]]);
-
-        polyline.setAttribute(
-          "points",
-          points.map((p) => p.join(",")).join(" "),
-        );
-      }
-
-      // move every 10 seconds
-      setInterval(moveChart, 10000);
-    </script>
 
     <style>
-      .trend {
-        transition: all 0.8s ease;
-      }
-
       .ps-section {
         background: radial-gradient(circle at top, #0f1b33, #050b18);
         padding: 100px 20px;
@@ -452,7 +444,6 @@
         font-size: 40px;
         margin-bottom: 70px;
       }
-
       .ps-heading span {
         color: #1affb2;
       }
@@ -467,12 +458,11 @@
       /* LEFT */
       .confusion-visual {
         position: relative;
-        width: 320px;
-        margin: 0 auto 30px;
+        width: 400px;
+        margin: auto 76px 30
         display: flex;
         justify-content: center;
       }
-
       .confusion-visual img {
         width: 135%;
         border-radius: 20px;
@@ -490,7 +480,6 @@
         border: 1px solid rgba(255, 255, 255, 0.08);
         animation: float 4s infinite ease-in-out;
       }
-
       .thought.red {
         background: #2a1212;
         color: #ff6b6b;
@@ -545,10 +534,6 @@
         border: 1px solid rgba(255, 80, 80, 0.18);
       }
 
-      .pain-icon {
-        font-size: 18px;
-      }
-
       /* RIGHT */
       .ps-right {
         background: linear-gradient(145deg, #0e1a30, #08101f);
@@ -583,6 +568,7 @@
         border-radius: 14px;
         display: flex;
         justify-content: space-between;
+        margin-bottom: 15px;
       }
 
       .profit {
@@ -590,129 +576,57 @@
       }
 
       .chart {
-        height: 120px;
-        background: linear-gradient(180deg, #0c1426, #08101f);
+        height: 260px;
         border-radius: 14px;
-        padding: 10px;
+        overflow: hidden;
+        padding: 0; /* remove inner spacing */
+        background: #0c1426;
+        position: relative;
       }
 
-      .chart-svg {
-        width: 100%;
-        height: 100%;
-      }
-      .grid {
-        stroke: rgba(255, 255, 255, 0.08);
-      }
-      .trend {
-        fill: none;
-        stroke: #1affb2;
-        stroke-width: 3;
-      }
-
-      /* ====================== */
-      /* ===== TABLET ===== */
-      /* ====================== */
-
+      /* TABLET */
       @media (max-width: 1024px) {
-        .ps-section {
-          padding: 80px 20px;
-        }
-
-        .ps-heading {
-          font-size: 32px;
-          margin-bottom: 50px;
-        }
-
         .ps-grid {
           grid-template-columns: 1fr;
-          gap: 50px;
         }
-
-        .confusion-visual {
-          width: 260px;
-        }
-
-        .confusion-visual img {
-          width: 115%;
-        }
-
-        .thought {
-          font-size: 12px;
-        }
-
-        .pain-points {
-          max-width: 600px;
-        }
-
-        .ps-right {
-          padding: 32px;
-          text-align: center;
-        }
-
-        .dashboard {
-          padding: 18px;
+        .ps-heading {
+          font-size: 32px;
         }
       }
 
-      /* ====================== */
-      /* ===== MOBILE ===== */
-      /* ====================== */
-
+      /* MOBILE */
       @media (max-width: 768px) {
-        .ps-section {
-          padding: 60px 16px;
-        }
-
         .ps-heading {
           font-size: 26px;
-          margin-bottom: 40px;
         }
-
-        .confusion-visual {
-          width: 220px;
+        .pain-points {
+          grid-template-columns: 1fr;
         }
-
-        .confusion-visual img {
-          width: 100%;
+        .dash-card {
+          flex-direction: column;
+          gap: 6px;
         }
-
-        /* Hide extra bubbles to avoid clutter */
+        .chart {
+          height: 220px;
+        }
         .t3,
         .t4 {
           display: none;
         }
+      }
+      .tradingview-widget-container {
+        width: 100% !important;
+        height: 100% !important;
+      }
 
-        .pain-points {
-          grid-template-columns: 1fr;
-        }
+      .tradingview-widget-container__widget {
+        width: 100% !important;
+        height: 100% !important;
+      }
 
-        .pain {
-          font-size: 14px;
-          padding: 14px;
-        }
-
-        .ps-right {
-          padding: 24px;
-        }
-
-        .ps-right h3 {
-          font-size: 20px;
-        }
-
-        .ps-right p {
-          font-size: 14px;
-        }
-
-        .dash-card {
-          flex-direction: column;
-          gap: 6px;
-          font-size: 14px;
-          text-align: left;
-        }
-
-        .chart {
-          height: 100px;
-        }
+      .tradingview-widget-container iframe {
+        width: 100% !important;
+        height: 100% !important;
       }
     </style>
 
@@ -1166,35 +1080,49 @@
     <!-- ========================= HOW IT WORKS SECTION =========================  -->
     <!-- ================SUBSCRIPTION PLANS SECTION=================  -->
     <div class="finlily-pricing">
-      <h2 class="fp-title">Easy <i>Choices</i>... No <i>Surprises</i>...</h2>
+      <h2 class="fp-title">Easy <i>Choices</i>. No <i>Surprises</i>.</h2>
       <p class="fp-sub">
-        Simple, transparent plans designed to support your investing journey
+        Simple, transparent plans designed to support your investing journey.
       </p>
 
       <div class="fp-row">
-        <!-- Quarterly -->
+        <!-- 3 MONTHS -->
         <div class="fp-card">
+          <div class="discount-badge">15% OFF</div>
           <div class="fp-pill">STARTER</div>
+
           <h3>Quarterly (3 Months)</h3>
+
+          <div class="price-row">
+            <span class="new">₹1,699</span>
+            <span class="old">₹1,999</span>
+          </div>
 
           <ul>
             <li>Weekly stock recommendations</li>
             <li>Structured learning modules</li>
             <li>Research reports</li>
-            <li>Email support</li>
             <li>Beginner guidance</li>
+            <li>Email support</li>
           </ul>
 
           <button onclick="openApp()">Get Started</button>
         </div>
 
-        <!-- 6 months -->
+        <!-- 6 MONTHS -->
         <div class="fp-card highlight">
-          <div class="fp-pill glow">SMART VALUE</div>
-          <h3>Annually (6 Months)</h3>
+          <div class="discount-badge">15% OFF</div>
+          <div class="fp-pill glow">MOST POPULAR</div>
+
+          <h3>Half-Yearly (6 Months)</h3>
+
+          <div class="price-row">
+            <span class="new">₹2549</span>
+            <span class="old">₹2,999</span>
+          </div>
 
           <ul>
-            <li>Everything in Quarterly</li>
+            <li>Everything in 3-Month plan</li>
             <li>Priority updates</li>
             <li>Analyst guidance</li>
             <li>Trend insights</li>
@@ -1204,10 +1132,17 @@
           <button onclick="openApp()">Get Started</button>
         </div>
 
-        <!-- 12 months -->
+        <!-- 12 MONTHS -->
         <div class="fp-card">
-          <div class="fp-pill">PRO</div>
+          <div class="discount-badge">54% OFF</div>
+          <div class="fp-pill">BEST VALUE</div>
+
           <h3>Annually (12 Months)</h3>
+
+          <div class="price-row">
+            <span class="new">₹2,499</span>
+            <span class="old">₹5,434</span>
+          </div>
 
           <ul>
             <li>All features unlocked</li>
@@ -1221,25 +1156,38 @@
         </div>
       </div>
 
+      <!-- PROMO BANNER -->
+      <div class="promo-banner">
+        Use Promo Code <b>FINLILY15</b> to avail the offer
+      </div>
+
       <!-- HOT CALLS -->
       <div class="hot-wrap">
-        <h2>Hot Calls</h2>
-        <p>
-          Get hot advices from SEBI Registered Research Analysts at a price of a
-          cup of coffee!!
+        <h2>Hot <i>Calls</i>...</h2>
+
+        <p class="hot-sub">
+          Get Instant Research-Based Stock Insight from SEBI Registered Research
+          Analysts at <br />a Price of a cup of <i>Coffee</i>!!
         </p>
 
         <div class="hot-card">
-          <span>Quick Start</span>
-          <div class="price">₹69</div>
+          <div class="hot-top">
+            <div class="hot-badge">TREADING NOW</div>
+            <p class="try-text">Try Before You Subscribe</p>
+          </div>
+
+          <div class="price">
+            ₹69
+            <p>Single Research Stock Call</p>
+          </div>
 
           <ul>
-            <li>Single stock call</li>
-            <li>Instant actionable insight</li>
-            <li>No subscription needed</li>
+            <li>One SEBI RA research call</li>
+            <li>No subscription required</li>
+            <li>Evaluate quality first</li>
           </ul>
 
-          <button onclick="openApp()">Try Now</button>
+          <button onclick="openApp()">Try ₹69 Call</button>
         </div>
       </div>
 
@@ -1249,6 +1197,62 @@
     </div>
 
     <style>
+      /* PRICE STYLE */
+      .price-row {
+        margin: 15px 0;
+      }
+
+      .price-row .new {
+        font-size: 26px;
+        font-weight: 700;
+        color: #2dd4bf; /* Finlily teal */
+        margin-right: 10px;
+      }
+
+      .price-row .old {
+        text-decoration: line-through;
+        opacity: 0.5;
+        font-size: 20px;
+        color: #94a3b8;
+      }
+
+      /* DISCOUNT BADGE — MATCH SITE */
+      .discount-badge {
+        position: absolute;
+        top: 8px;
+        right: 5px;
+        background: linear-gradient(135deg, #ffffff, #62cec1);
+        color: #000;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+
+        padding: 6px 14px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 700;
+
+        letter-spacing: 0.5px;
+      }
+
+      /* PROMO BANNER — DARK GLASS STYLE */
+      .promo-banner {
+        margin: 25px auto;
+        background: linear-gradient(180deg, #0b1220, #0f172a);
+        border: 1px solid rgba(45, 212, 191, 0.3);
+        padding: 15px;
+        border-radius: 16px;
+        font-size: 18px;
+        font-weight: 600;
+        max-width: 700px;
+        color: #e5e7eb;
+
+        /* glow */
+        box-shadow: 0 0 25px rgba(45, 212, 191, 0.15);
+      }
+
+      .promo-banner b {
+        color: #2dd4bf;
+      }
+
       .finlily-pricing {
         background: radial-gradient(circle at 20% 10%, #0f1b34, #081224 60%);
         padding: 100px 20px;
@@ -1280,7 +1284,7 @@
         background: linear-gradient(180deg, #182d4e, #000000);
         border: 1px solid rgba(54, 151, 188, 0.25);
         border-radius: 22px;
-        padding: 40px;
+        padding: 25px;
         width: 300px;
         position: relative;
       }
@@ -1366,10 +1370,19 @@
         font-weight: 700;
         margin: 0;
       }
-      .hot-wrap p {
+      /* .hot-card p {
+    opacity: 0.7;
+    margin: 10px 0 30px;
+    font-size: 22px;
+  } */
+      .hot-top {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      .try-text {
         opacity: 0.7;
-        margin: 10px 0 30px;
-        font-size: 22px;
+        margin: 1px 0 15px;
+        font-size: 18px;
       }
 
       .hot-card {
@@ -1377,9 +1390,9 @@
         border: 1px solid rgba(54, 151, 188, 0.25);
         border-radius: 22px;
         padding: 40px;
-        max-width: 360px;
+        max-width: 415px;
         margin: 30px auto;
-        text-align: left;
+        text-align: center;
       }
       .hot-card:hover {
         border: 1px solid rgba(45, 212, 191, 0.4);
@@ -1388,16 +1401,52 @@
       .hot-card span {
         opacity: 0.7;
       }
+      /* Subheading text */
+      .hot-sub {
+        display: block;
+        max-width: 815px;
+        margin: 12px auto 40px auto;
+
+        text-align: center;
+        line-height: 1.6;
+        font-size: 22px;
+        opacity: 0.75;
+      }
+
+      /* WOW Badge */
+      .hot-badge {
+        display: inline-block;
+        margin-bottom: 15px;
+        top: 8px !important;
+        right: 5px !important;
+        background: linear-gradient(135deg, #ffffff, #62cec1);
+        color: #000;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        padding: 6px 14px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+      }
 
       .price {
-        font-size: 48px;
+        text-align: center;
+        font-size: 52px;
         font-weight: 700;
-        margin: 10px 0 20px;
+        margin: 10px 0 5px;
+      }
+
+      .price p {
+        opacity: 0.8;
+        margin-top: 6px;
+        margin: 10px 0 30px;
+        font-size: 22px;
       }
 
       .hot-card ul {
         list-style: none;
         padding: 0;
+        text-align: left;
       }
 
       .hot-card li {
@@ -1713,8 +1762,8 @@
 
             <!-- FLOATING BADGE -->
             <div class="fx-assets">
-              <small>Assets Managed</small>
-              <h4>$250B</h4>
+              <small>Assets Managed for</small>
+              <h4>10,000+ Investors</h4>
             </div>
           </div>
         </div>
@@ -1871,7 +1920,7 @@
       }
 
       .fx-assets h4 {
-        font-size: 28px;
+        font-size: 22px;
         margin: 4px 0 0;
         line-height: 1;
       }

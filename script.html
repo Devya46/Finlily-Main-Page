@@ -1,65 +1,405 @@
-<div class="center-wrap">
-  <button class="learn-btn">
-    <span class="star"
-      ><img src="https://flagcdn.com/w40/in.png" alt="Indian Flag" width="40" />
-    </span>
-    Learn and Grow
-  </button>
+<div class="finlily-pricing">
+  <h2 class="fp-title">Easy <i>Choices</i>. No <i>Surprises</i>.</h2>
+  <p class="fp-sub">
+    Simple, transparent plans designed to support your investing journey.
+  </p>
+
+  <div class="fp-row">
+    <!-- 3 MONTHS -->
+    <div class="fp-card">
+      <div class="discount-badge">15% OFF</div>
+      <div class="fp-pill">STARTER</div>
+
+      <h3>Quarterly (3 Months)</h3>
+
+      <div class="price-row">
+        <span class="new">₹1,699</span>
+        <span class="old">₹1,999</span>
+      </div>
+
+      <ul>
+        <li>Weekly stock recommendations</li>
+        <li>Structured learning modules</li>
+        <li>Research reports</li>
+        <li>Beginner guidance</li>
+        <li>Email support</li>
+      </ul>
+
+      <button onclick="openApp()">Get Started</button>
+    </div>
+
+    <!-- 6 MONTHS -->
+    <div class="fp-card highlight">
+      <div class="discount-badge">15% OFF</div>
+      <div class="fp-pill glow">MOST POPULAR</div>
+
+      <h3>Half-Yearly (6 Months)</h3>
+
+      <div class="price-row">
+        <span class="new">₹2549</span>
+        <span class="old">₹2,999</span>
+      </div>
+
+      <ul>
+        <li>Everything in 3-Month plan</li>
+        <li>Priority updates</li>
+        <li>Analyst guidance</li>
+        <li>Trend insights</li>
+        <li>Faster support</li>
+      </ul>
+
+      <button onclick="openApp()">Get Started</button>
+    </div>
+
+    <!-- 12 MONTHS -->
+    <div class="fp-card">
+      <div class="discount-badge">54% OFF</div>
+      <div class="fp-pill">BEST VALUE</div>
+
+      <h3>Annually (12 Months)</h3>
+
+      <div class="price-row">
+        <span class="new">₹2,499</span>
+        <span class="old">₹5,434</span>
+      </div>
+
+      <ul>
+        <li>All features unlocked</li>
+        <li>Maximum savings</li>
+        <li>Mentorship access</li>
+        <li>Strategy sessions</li>
+        <li>Investor community</li>
+      </ul>
+
+      <button onclick="openApp()">Get Started</button>
+    </div>
+  </div>
+
+  <!-- PROMO BANNER -->
+  <div class="promo-banner">
+    Use Promo Code <b>FINLILY15</b> to avail the offer
+  </div>
+
+  <!-- HOT CALLS -->
+  <div class="hot-wrap">
+    <h2>Hot <i>Calls</i>...</h2>
+
+    <p class="hot-sub">
+      Get Instant Research-Based Stock Insight from SEBI Registered Research
+      Analysts at a price of a cup of coffee!!
+    </p>
+
+    <div class="hot-card">
+      <div class="hot-top">
+        <div class="hot-badge">TREADING NOW</div>
+        <p class="try-text">Try Before You Subscribe</p>
+      </div>
+
+      <div class="price">
+        ₹69
+        <p>Single Research Stock Call</p>
+      </div>
+
+      <ul>
+        <li>One SEBI RA research call</li>
+        <li>No subscription required</li>
+        <li>Evaluate quality first</li>
+      </ul>
+
+      <button onclick="openApp()">Try ₹69 Call</button>
+    </div>
+  </div>
+
+  <p class="fp-note">
+    Subscriptions are analyst-specific and charged individually.*
+  </p>
 </div>
+
 <style>
-  .center-wrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family:
-      system-ui,
-      -apple-system,
-      Segoe UI,
-      Roboto,
-      Arial;
-  }
-  .learn-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-
-    padding: 14px 28px;
-    border-radius: 40px;
-
-    background: #111;
-    color: #fff;
-
-    border: 1px solid #2a2a2a;
-    font-size: 18px;
-    cursor: pointer;
-
-    transition: 0.3s ease;
+  /* PRICE STYLE */
+  .price-row {
+    margin: 15px 0;
   }
 
-  /* STAR */
-  .star {
+  .price-row .new {
+    font-size: 26px;
+    font-weight: 700;
+    color: #2dd4bf; /* Finlily teal */
+    margin-right: 10px;
+  }
+
+  .price-row .old {
+    text-decoration: line-through;
+    opacity: 0.5;
     font-size: 20px;
+    color: #94a3b8;
   }
 
-  /* HOVER EFFECT */
-  .learn-btn:hover {
-    background: #1c1c1c;
-    border-color: #444;
-    transform: scale(1.05);
+  /* DISCOUNT BADGE — MATCH SITE */
+  .discount-badge {
+    position: absolute;
+    top: 8px;
+    right: 5px;
+    background: linear-gradient(135deg, #ffffff, #62cec1);
+    color: #000;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
   }
 
-  /* =========================
-   MEDIA QUERY
-========================= */
-  @media (max-width: 600px) {
-    .learn-btn {
-      font-size: 16px;
-      padding: 12px 22px;
-      gap: 8px;
-    }
+  /* PROMO BANNER — DARK GLASS STYLE */
+  .promo-banner {
+    margin: 25px auto;
+    background: linear-gradient(180deg, #0b1220, #0f172a);
+    border: 1px solid rgba(45, 212, 191, 0.3);
+    padding: 15px;
+    border-radius: 16px;
+    font-size: 18px;
+    font-weight: 600;
+    max-width: 700px;
+    color: #e5e7eb;
 
-    .star {
-      font-size: 18px;
-    }
+    /* glow */
+    box-shadow: 0 0 25px rgba(45, 212, 191, 0.15);
+  }
+
+  .promo-banner b {
+    color: #2dd4bf;
+  }
+
+  .finlily-pricing {
+    background: radial-gradient(circle at 20% 10%, #0f1b34, #081224 60%);
+    padding: 100px 20px;
+    color: white;
+    font-family: Inter, system-ui;
+    text-align: center;
+  }
+
+  .fp-title {
+    font-size: 40px;
+  }
+  .fp-sub {
+    opacity: 0.7;
+    font-size: 22px;
+    margin-bottom: 55px;
+    margin-top: -12px;
+  }
+
+  .fp-row {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  /* CARD */
+  .fp-card {
+    background: linear-gradient(180deg, #182d4e, #000000);
+    border: 1px solid rgba(54, 151, 188, 0.25);
+    border-radius: 22px;
+    padding: 25px;
+    width: 300px;
+    position: relative;
+  }
+
+  /* glow border */
+  .fp-card:hover {
+    border: 1px solid #2dd4bf;
+    box-shadow: 0 0 25px rgba(45, 212, 191, 0.25);
+  }
+
+  /* glass shine */
+  .fp-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.05),
+      transparent
+    );
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  .fp-pill {
+    display: inline-block;
+    background: #25ae9d;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .fp-card h3 {
+    margin: 10px 0 20px;
+  }
+
+  .fp-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+  }
+
+  .fp-card li {
+    margin: 12px 0;
+    padding-left: 22px;
+    position: relative;
+    opacity: 0.9;
+  }
+
+  .fp-card li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #2dd4bf;
+    font-weight: bold;
+  }
+
+  .fp-card button {
+    margin-top: 20px;
+    background: #2dd4bf;
+    color: #042f2e;
+    border: none;
+    padding: 14px;
+    width: 100%;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .fp-card button:hover {
+    background: #1c9b94;
+    color: white;
+  }
+
+  /* HOT CALL */
+  .hot-wrap {
+    margin-top: 90px;
+  }
+  .hot-wrap h2 {
+    font-size: 38px;
+    font-weight: 700;
+    margin: 0;
+  }
+  /* .hot-card p {
+    opacity: 0.7;
+    margin: 10px 0 30px;
+    font-size: 22px;
+  } */
+  .hot-top {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .try-text {
+    opacity: 0.7;
+    margin: 1px 0 15px;
+    font-size: 18px;
+  }
+
+  .hot-card {
+    background: linear-gradient(180deg, #182d4e, #000000);
+    border: 1px solid rgba(54, 151, 188, 0.25);
+    border-radius: 22px;
+    padding: 40px;
+    max-width: 360px;
+    margin: 30px auto;
+    text-align: center;
+  }
+  .hot-card:hover {
+    border: 1px solid rgba(45, 212, 191, 0.4);
+    box-shadow: 0 0 30px rgba(45, 212, 191, 0.15);
+  }
+  .hot-card span {
+    opacity: 0.7;
+  }
+  /* Subheading text */
+  .hot-sub {
+    display: block;
+    max-width: 650px;
+    margin: 12px auto 40px auto;
+
+    text-align: center;
+    line-height: 1.6;
+    font-size: 22px;
+    opacity: 0.75;
+  }
+
+  /* WOW Badge */
+  .hot-badge {
+    display: inline-block;
+    margin-bottom: 15px;
+    top: 8px !important;
+    right: 5px !important;
+    background: linear-gradient(135deg, #ffffff, #62cec1);
+    color: #000;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .price {
+    text-align: center;
+    font-size: 52px;
+    font-weight: 700;
+    margin: 10px 0 5px;
+  }
+
+  .price p {
+    opacity: 0.8;
+    margin-top: 6px;
+    margin: 10px 0 30px;
+    font-size: 22px;
+  }
+
+  .hot-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+  }
+
+  .hot-card li {
+    margin: 12px 0;
+    padding-left: 22px;
+    position: relative;
+  }
+
+  .hot-card li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #2dd4bf;
+  }
+
+  .hot-card button {
+    background: #2dd4bf;
+    color: #042f2e;
+    border: none;
+    padding: 14px;
+    width: 100%;
+    border-radius: 12px;
+    font-weight: 600;
+    margin-top: 15px;
+  }
+  .hot-card button:hover {
+    background: #1c9b94;
+    color: white;
+  }
+
+  /* NOTE */
+  .fp-note {
+    opacity: 0.8;
+    margin-top: 40px;
+    font-size: 14px;
   }
 </style>
