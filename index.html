@@ -6,6 +6,97 @@
     <title>FINLILY</title>
   </head>
   <body>
+    <!-- ==========Header===========  -->
+    <header class="site-header">
+      <div class="header-inner">
+        <!-- LOGO -->
+        <div class="logo">
+          <img
+            src="https://framerusercontent.com/images/Pkydub3sliGjbNVrjmDqbG939Ag.png"
+            alt="Logo"
+          />
+        </div>
+
+        <!-- CTA BUTTON -->
+        <a href="#SUBSCRIPTION-Section" class="start-btn">Start Now</a>
+      </div>
+    </header>
+
+    <style>
+      /* HEADER */
+      .site-header {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 999;
+
+        background: #09111e;
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(45, 212, 191, 0.15);
+      }
+
+      /* INNER LAYOUT */
+      .header-inner {
+        max-width: 1410px;
+        margin: auto;
+        padding: 14px 20px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      /* LOGO */
+      .logo img {
+        height: 43px;
+        width: auto;
+        display: block;
+      }
+
+      /* BUTTON */
+      .start-btn {
+        background: #2dd4bf;
+        color: #042f2e;
+        padding: 18px 50px;
+        border-radius: 30px;
+        font-weight: 600;
+        font-size: 18px;
+        text-decoration: none;
+        transition: 0.25s ease;
+      }
+
+      .start-btn:hover {
+        transform: translateY(-2px);
+        background: #1c9b94;
+        color: white;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 768px) {
+        .header-inner {
+          padding: 12px 16px;
+        }
+
+        .logo img {
+          height: 28px;
+        }
+
+        .start-btn {
+          padding: 9px 16px;
+          font-size: 13px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .start-btn {
+          padding: 8px 14px;
+          font-size: 12px;
+        }
+      }
+    </style>
+
+    <!-- ========= HEADER===========   -->
+    <!-- ========== hero Section============  -->
     <section class="finlily-hero">
       <div class="fh-container">
         <!-- LEFT -->
@@ -375,13 +466,13 @@
             </p>
 
             <div class="dashboard">
-              <!-- CARD -->
+              <!-- CARD
               <div class="dash-card">
                 <div>Stock: INFY</div>
                 <div>Entry: ₹1,420</div>
                 <div>Target: ₹1,560</div>
                 <div class="profit">+9.8%</div>
-              </div>
+              </div> -->
 
               <!-- TRADINGVIEW WIDGET -->
               <div class="chart tv-wrap">
@@ -459,9 +550,11 @@
       .confusion-visual {
         position: relative;
         width: 400px;
-        margin: auto 76px 30
+        margin: auto 76px 30;
         display: flex;
         justify-content: center;
+        left: 58px;
+        top: -33px;
       }
       .confusion-visual img {
         width: 135%;
@@ -750,6 +843,10 @@
         background: linear-gradient(180deg, #182d4e, #000);
         transform: scale(1.05);
       }
+      .core-card.featured:hover {
+        border: 1px solid #2dd4bf;
+        box-shadow: 0 0 25px rgba(45, 212, 191, 0.25);
+      }
 
       /* BADGE */
       .recommended {
@@ -817,12 +914,18 @@
         display: block;
         text-align: center;
         margin-top: 20px;
-        background: #3bf5b6;
-        color: black;
+        background: #2dd4bf;
+        color: #042f2e;
         padding: 14px;
         border-radius: 12px;
         font-weight: 600;
         text-decoration: none;
+        margin-top: 20px;
+        cursor: pointer;
+      }
+      .core-btn:hover {
+        background: #1c9b94;
+        color: white;
       }
 
       /* ========================= */
@@ -1079,7 +1182,7 @@
 
     <!-- ========================= HOW IT WORKS SECTION =========================  -->
     <!-- ================SUBSCRIPTION PLANS SECTION=================  -->
-    <div class="finlily-pricing">
+    <div class="finlily-pricing" id="SUBSCRIPTION-Section">
       <h2 class="fp-title">Easy <i>Choices</i>. No <i>Surprises</i>.</h2>
       <p class="fp-sub">
         Simple, transparent plans designed to support your investing journey.
@@ -1501,60 +1604,95 @@
         <div>✔ Structured Swing Trading Framework</div>
       </div>
 
-      <!-- ANALYST GRID (SCROLLABLE) -->
+      <!-- ANALYST SCROLL -->
       <div class="analyst-scroll">
-        <!-- Analyst 1 -->
+        <!-- CARD 1 (Google Verified) -->
         <div class="analyst-card">
+          <img
+            class="verify-icon"
+            src="https://cdn-icons-png.flaticon.com/512/300/300221.png"
+          />
+
           <img src="https://i.pravatar.cc/150?img=12" />
           <h4>Rahul Sharma</h4>
-          <p>SEBI Registered RA</p>
-          <span class="verify">✔ Verified</span>
+          <p class="role">SEBI Registered RA</p>
+
+          <p class="quote">
+            “15+ years analyzing Indian markets. Focused on risk-managed swing
+            trading strategies.”
+          </p>
         </div>
 
-        <!-- Analyst 2 -->
+        <!-- CARD 2 (Finlily Verified) -->
         <div class="analyst-card">
+          <img
+            class="verify-icon"
+            src="https://cdn-icons-png.flaticon.com/512/300/300221.png"
+          />
+
           <img src="https://i.pravatar.cc/150?img=32" />
           <h4>Anita Mehta</h4>
-          <p>Equity Research Analyst</p>
-          <span class="verify">✔ Verified</span>
+          <p class="role">Equity Research Analyst</p>
+
+          <p class="quote">
+            “Specialist in fundamentals & earnings plays. Known for
+            high-accuracy research calls.”
+          </p>
         </div>
 
-        <!-- Analyst 3 -->
+        <!-- CARD 3 -->
         <div class="analyst-card">
           <img src="https://i.pravatar.cc/150?img=5" />
           <h4>Karan Patel</h4>
-          <p>Swing Trading Expert</p>
-          <span class="verify">✔ Verified</span>
+          <p class="role">Swing Trading Expert</p>
+
+          <p class="quote">
+            “Helps traders capture momentum swings. Simplifies complex setups.”
+          </p>
         </div>
 
-        <!-- Analyst 4 -->
+        <!-- CARD 4 -->
         <div class="analyst-card">
+          <img
+            class="verify-icon"
+            src="https://cdn-icons-png.flaticon.com/512/300/300221.png"
+          />
+
           <img src="https://i.pravatar.cc/150?img=20" />
           <h4>Neha Gupta</h4>
-          <p>Market Strategist</p>
-          <span class="verify">✔ Verified</span>
+          <p class="role">Market Strategist</p>
+
+          <p class="quote">
+            “Macro-driven strategy builder. Guides investors during volatility.”
+          </p>
         </div>
 
-        <!-- NEW EXTRA CARDS -->
+        <!-- CARD 5 -->
         <div class="analyst-card">
           <img src="https://i.pravatar.cc/150?img=15" />
           <h4>Arjun Verma</h4>
-          <p>Technical Analyst</p>
-          <span class="verify">✔ Verified</span>
+          <p class="role">Technical Analyst</p>
+
+          <p class="quote">
+            “Chart pattern specialist. Combines TA with volume insights.”
+          </p>
         </div>
 
+        <!-- CARD 6 -->
         <div class="analyst-card">
+          <img
+            class="verify-icon"
+            src="https://cdn-icons-png.flaticon.com/512/300/300221.png"
+          />
+
           <img src="https://i.pravatar.cc/150?img=45" />
           <h4>Sneha Iyer</h4>
-          <p>Derivatives Expert</p>
-          <span class="verify">✔ Verified</span>
-        </div>
+          <p class="role">Derivatives Expert</p>
 
-        <div class="analyst-card">
-          <img src="https://i.pravatar.cc/150?img=22" />
-          <h4>Rohit Jain</h4>
-          <p>Momentum Trader</p>
-          <span class="verify">✔ Verified</span>
+          <p class="quote">
+            “Options strategist with 12+ yrs experience. Focus on safe premium
+            strategies.”
+          </p>
         </div>
       </div>
     </section>
@@ -1568,12 +1706,11 @@
         font-family: Inter, system-ui;
       }
 
-      /* HEADING */
+      /* TITLE */
       .trust-title {
         font-size: 38px;
         margin-bottom: 40px;
       }
-
       .trust-title span {
         color: #2dd4bf;
       }
@@ -1587,7 +1724,6 @@
         max-width: 900px;
         margin: 0 auto 60px;
       }
-
       .trust-points div {
         background: #0e1a2d;
         border: 1px solid rgba(45, 212, 191, 0.3);
@@ -1597,13 +1733,33 @@
         opacity: 0.9;
       }
 
-      /* ANALYST GRID */
-      .analyst-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      /* SCROLL AREA */
+      /* SCROLL AREA */
+      .analyst-scroll {
+        display: flex;
         gap: 25px;
-        max-width: 1000px;
-        margin: auto;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        flex-wrap: nowrap; /* KEY: keep in one row */
+        scroll-snap-type: x mandatory;
+
+        scroll-behavior: smooth; /* smooth scroll */
+        -webkit-overflow-scrolling: touch; /* better mobile */
+
+        padding-bottom: 10px;
+        cursor: grab;
+        user-select: none;
+      }
+
+      .analyst-scroll:active {
+        cursor: grabbing;
+      }
+
+      /* Hide scrollbar (clean look) */
+      .analyst-scroll::-webkit-scrollbar {
+        display: none;
       }
 
       /* CARD */
@@ -1612,10 +1768,18 @@
         border: 1px solid rgba(45, 212, 191, 0.25);
         border-radius: 20px;
         padding: 30px;
+        min-width: 300px;
+        scroll-snap-align: start;
         position: relative;
+        text-align: center;
+        transition: 0.3s;
+      }
+      .analyst-card:hover {
+        transform: translateY(-6px);
+        border-color: #2dd4bf;
       }
 
-      /* glass shine */
+      /* Glass shine */
       .analyst-card::after {
         content: "";
         position: absolute;
@@ -1629,53 +1793,89 @@
         opacity: 0.4;
       }
 
-      .analyst-card img {
+      /* Top-right verification icon */
+      .verify-icon {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        width: 30px;
+        height: 30px;
+        object-fit: contain;
+        background: white;
+        padding: 4px;
+        border-radius: 50%;
+      }
+      .verify-icon1 {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        width: 18px;
+        height: 18px;
+        object-fit: contain;
+        background: transparent;
+        padding: 0;
+        border-radius: 0;
+        opacity: 0.9;
+      }
+
+      /* Avatar */
+      .analyst-card img:not(.verify-icon) {
         width: 70px;
         height: 70px;
         border-radius: 50%;
         margin-bottom: 10px;
       }
 
-      .analyst-card h4 {
-        margin: 10px 0 5px;
-      }
-
-      .analyst-card p {
+      .role {
         opacity: 0.7;
         font-size: 14px;
-        margin-bottom: 10px;
+        margin-bottom: 22px;
+        margin-top: -13px;
       }
 
-      /* VERIFIED BADGE */
-      .verify {
-        display: inline-block;
-        background: #2dd4bf;
-        color: #042f2e;
-        padding: 6px 12px;
-        border-radius: 20px;
-        font-size: 12px;
-        font-weight: 600;
-      }
-      /* SCROLL CONTAINER */
-      .analyst-scroll {
-        display: flex;
-        gap: 25px;
-        overflow-x: auto;
-        padding-bottom: 10px;
-        scroll-snap-type: x mandatory;
-      }
-
-      /* Hide scrollbar (premium look) */
-      .analyst-scroll::-webkit-scrollbar {
-        display: none;
-      }
-
-      /* CARD SIZE FOR SCROLL */
-      .analyst-card {
-        min-width: 220px;
-        scroll-snap-align: start;
+      /* Experience Quote */
+      .quote {
+        font-size: 15px;
+        line-height: 1.5;
+        opacity: 0.85;
+        background: #0c1629;
+        padding: 12px;
+        border-radius: 12px;
+        border: 1px solid rgba(45, 212, 191, 0.15);
+        font-style: italic;
+        margin-bottom: 3px;
       }
     </style>
+    <script>
+      const slider = document.querySelector(".analyst-scroll");
+
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      slider.addEventListener("mousedown", (e) => {
+        isDown = true;
+        slider.classList.add("active");
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+      });
+
+      slider.addEventListener("mouseleave", () => {
+        isDown = false;
+      });
+
+      slider.addEventListener("mouseup", () => {
+        isDown = false;
+      });
+
+      slider.addEventListener("mousemove", (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 2;
+        slider.scrollLeft = scrollLeft - walk;
+      });
+    </script>
 
     <!-- ==============TRUST & AUTHORITY SECTION================   -->
     <!-- ========== FAQ SECTION ===========  -->
@@ -2706,5 +2906,12 @@
         }
       }
     </style>
+    <script>
+      // Remove hash from URL on refresh
+      if (window.location.hash) {
+        history.replaceState(null, null, window.location.pathname);
+        window.scrollTo(0, 0);
+      }
+    </script>
   </body>
 </html>
