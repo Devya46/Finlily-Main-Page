@@ -235,7 +235,7 @@
     </script>
     <!-- ============ HEADER ============= -->
     <!-- ========== HERO SECTION ========== -->
-    <section class="finlily-hero">
+    <section class="finlily-hero" id="HOME-section">
       <div class="fh-container">
         <!-- LEFT -->
         <div class="fh-left">
@@ -810,22 +810,22 @@
 
     <!-- =======Problem → Solution section======= -->
     <!-- =========== CORE SERVICES SECTION ======== -->
-    <section class="core-section">
-      <div class="core-container">
-        <h2 class="core-heading">
+    <section class="finlily-core">
+      <div class="finlily-core__container">
+        <h2 class="finlily-core__heading">
           What You Get Inside <span>Finlily</span>...
         </h2>
 
-        <div class="core-grid">
+        <div class="finlily-core__grid">
           <!-- CARD 1 -->
-          <div class="core-card side">
-            <div class="card-image">
+          <div class="finlily-core__card side">
+            <div class="finlily-core__image">
               <img
                 src="https://images.unsplash.com/photo-1560221328-12fe60f83ab8?w=600&auto=format&fit=crop&q=60"
               />
             </div>
 
-            <div class="card-content">
+            <div class="finlily-core__content">
               <h3>Dynamic Learn</h3>
               <ul>
                 <li>Learn from real trades</li>
@@ -839,12 +839,12 @@
           </div>
 
           <!-- FEATURED -->
-          <div class="core-card featured">
-            <div class="recommended">⭐ Recommended</div>
+          <div class="finlily-core__card featured">
+            <div class="finlily-core__badge">⭐ Recommended</div>
 
-            <div class="price">₹69</div>
+            <div class="finlily-core__price">₹69</div>
 
-            <div class="card-content">
+            <div class="finlily-core__content">
               <h3>Trial Call</h3>
               <ul>
                 <li>Unlock 1 stock recommendation</li>
@@ -853,19 +853,19 @@
                 <li>Try before subscribing</li>
               </ul>
 
-              <a href="#" class="core-btn">Download Finlily App</a>
+              <a href="#" class="finlily-core__btn">Download Finlily App</a>
             </div>
           </div>
 
           <!-- CARD 3 -->
-          <div class="core-card side">
-            <div class="card-image">
+          <div class="finlily-core__card side">
+            <div class="finlily-core__image">
               <img
                 src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1200&auto=format&fit=crop"
               />
             </div>
 
-            <div class="card-content">
+            <div class="finlily-core__content">
               <h3>SEBI RA Recommendations</h3>
               <ul>
                 <li>Weekly swing trade calls</li>
@@ -881,62 +881,83 @@
     </section>
 
     <style>
-      .core-section {
+      /* ===== HARD RESET INSIDE SECTION ===== */
+      .finlily-core * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+
+      .finlily-core ul {
+        list-style: none !important;
+        padding: 0 !important;
+      }
+
+      .finlily-core img {
+        max-width: 100%;
+        display: block;
+      }
+
+      /* ===== SECTION ===== */
+      .finlily-core__content h3 {
+        padding: 12px 0;
+      }
+      .finlily-core__content h3 {
+        padding: 12px 0;
+      }
+      .finlily-core__content h3 {
+        padding: 12px 0;
+      }
+      .finlily-core {
         background: radial-gradient(circle at top, #0f1b33, #050b18);
         padding: 110px 20px;
         font-family: Inter, Arial;
         color: white;
       }
 
-      .core-container {
+      .finlily-core__container {
         max-width: 1100px;
         margin: auto;
       }
 
-      .core-heading {
+      .finlily-core__heading {
         text-align: center;
         font-size: 42px;
         margin-bottom: 70px;
       }
 
-      .core-heading span {
+      .finlily-core__heading span {
         color: #1affb2;
       }
 
-      .core-grid {
+      /* GRID */
+      .finlily-core__grid {
         display: grid;
         grid-template-columns: 1fr 1.1fr 1fr;
         gap: 30px;
         align-items: center;
       }
 
-      /* CARDS */
-      .core-card {
+      /* CARD */
+      .finlily-core__card {
         background: black;
         border-radius: 22px;
         padding: 30px;
         border: 1px solid rgba(14, 66, 222, 0.95);
         position: relative;
-        transition: 0.25s;
       }
 
-      .core-card.side {
-        opacity: 0.8;
+      .finlily-core__card.side {
+        opacity: 0.85;
         transform: scale(0.97);
       }
 
-      .core-card.featured {
+      .finlily-core__card.featured {
         background: linear-gradient(180deg, #182d4e, #000);
         transform: scale(1.05);
       }
 
-      .core-card.featured:hover {
-        border: 1px solid #2dd4bf;
-        box-shadow: 0 0 25px rgba(45, 212, 191, 0.25);
-      }
-
       /* BADGE */
-      .recommended {
+      .finlily-core__badge {
         position: absolute;
         top: -14px;
         left: 50%;
@@ -950,7 +971,7 @@
       }
 
       /* PRICE */
-      .price {
+      .finlily-core__price {
         font-size: 42px;
         font-weight: 700;
         color: #1affb2;
@@ -959,33 +980,28 @@
       }
 
       /* IMAGE */
-      .card-image {
+      .finlily-core__image {
         height: 150px;
         border-radius: 14px;
         overflow: hidden;
         margin-bottom: 18px;
       }
 
-      .card-image img {
+      .finlily-core__image img {
         width: 100%;
         height: 100%;
         object-fit: cover;
       }
 
       /* LIST */
-      .core-card ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-
-      .core-card li {
+      .finlily-core__card li {
         margin-bottom: 10px;
         padding-left: 18px;
         position: relative;
+        font-size: 15px;
       }
 
-      .core-card li:before {
+      .finlily-core__card li:before {
         content: "";
         width: 6px;
         height: 6px;
@@ -997,35 +1013,30 @@
       }
 
       /* BUTTON */
-      .core-btn {
+      .finlily-core__btn {
         display: block;
         text-align: center;
         margin-top: 20px;
         background: #2dd4bf;
-        color: #042f2e;
+        color: #042f2e !important;
         padding: 14px;
         border-radius: 12px;
         font-weight: 600;
-        text-decoration: none;
-      }
-
-      .core-btn:hover {
-        background: #1c9b94;
-        color: white;
+        text-decoration: none !important;
       }
 
       /* ===== TABLET ===== */
       @media (max-width: 1024px) {
-        .core-heading {
+        .finlily-core__heading {
           font-size: 32px;
           margin-bottom: 40px;
         }
 
-        .core-grid {
+        .finlily-core__grid {
           grid-template-columns: 1fr;
         }
 
-        .core-card {
+        .finlily-core__card {
           max-width: 620px;
           margin: auto;
           transform: none !important;
@@ -1035,65 +1046,62 @@
 
       /* ===== MOBILE ===== */
       @media (max-width: 768px) {
-        .core-section {
+        .finlily-core {
           padding: 70px 16px;
         }
 
-        .core-heading {
+        .finlily-core__heading {
           font-size: 26px;
         }
 
-        .card-image {
+        .finlily-core__image {
           height: 170px;
         }
 
-        .core-card {
+        .finlily-core__card {
           padding: 22px;
         }
 
-        .core-card h3 {
-          font-size: 18px;
-        }
-
-        .core-card li {
+        .finlily-core__card li {
           font-size: 14px;
         }
 
-        .price {
+        .finlily-core__price {
           font-size: 32px;
           margin-top: 20px;
         }
       }
     </style>
-    <!-- ======= CORE SERVICES SECTION ========  -->
-    <!-- =========== HOW IT WORKS SECTION ========   -->
-    <section class="how-section">
-      <div class="how-container">
-        <h2 class="how-heading">Start in <span>Minutes</span></h2>
 
-        <div class="steps">
-          <div class="step">
-            <div class="icon">📲</div>
+    <!-- ======= CORE SERVICES SECTION ========  -->
+    <!-- =========== HOW IT WORKS SECTION ======== -->
+    <section class="finlily-how">
+      <div class="finlily-how__container">
+        <h2 class="finlily-how__heading">Start in <span>Minutes</span></h2>
+
+        <div class="finlily-how__steps">
+          <div class="finlily-how__step">
+            <div class="finlily-how__icon">📲</div>
             <p>Download Finlily App</p>
           </div>
 
-          <div class="step">
-            <div class="icon">🧬</div>
+          <div class="finlily-how__step">
+            <div class="finlily-how__icon">🧬</div>
             <p>Choose SEBI Registered Analyst</p>
           </div>
 
-          <div class="step highlight">
-            <div class="icon">₹</div>
+          <div class="finlily-how__step highlight">
+            <div class="finlily-how__icon">₹</div>
             <p>Try ₹69 Stock Call</p>
           </div>
 
-          <div class="step">
-            <div class="icon">🗓</div>
+          <div class="finlily-how__step">
+            <div class="finlily-how__icon">🗓</div>
             <p>Subscribe 3 / 6 / 12 Months</p>
           </div>
 
-          <div class="step">
-            <div class="icon">📈</div>
+          <div class="finlily-how__step">
+            <div class="finlily-how__icon">📈</div>
             <p>Receive Weekly Calls + Learning</p>
           </div>
         </div>
@@ -1101,57 +1109,49 @@
     </section>
 
     <style>
+      /* RESET */
+      .finlily-how * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+
       /* SECTION */
-      .how-section {
+      .finlily-how {
         background: radial-gradient(circle at top, #0f1b33, #050b18);
         padding: 70px 20px;
         color: white;
         font-family: Inter, Arial;
       }
 
-      .how-container {
+      .finlily-how__container {
         max-width: 1200px;
         margin: auto;
       }
 
-      .how-heading {
+      .finlily-how__heading {
         text-align: center;
         font-size: 40px;
         margin-bottom: 60px;
       }
 
-      .how-heading span {
+      .finlily-how__heading span {
         color: #1affb2;
       }
 
-      /* DESKTOP LAYOUT */
-      .steps {
+      /* DESKTOP */
+      .finlily-how__steps {
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 40px;
       }
 
-      /* STEP */
-      .step {
+      .finlily-how__step {
         text-align: center;
         width: 180px;
-        position: relative;
       }
 
-      /* ARROW (desktop) */
-      .step:not(:last-child)::after {
-        content: "›";
-        position: absolute;
-        right: -28px;
-        top: 22px;
-        font-size: 38px;
-        color: #1affb2;
-        opacity: 0.9;
-      }
-
-      /* ICON */
-      .icon {
+      .finlily-how__icon {
         width: 60px;
         height: 60px;
         display: flex;
@@ -1164,505 +1164,310 @@
         margin-bottom: 14px;
       }
 
-      /* TEXT */
-      .step p {
+      .finlily-how__step p {
         font-size: 15px;
         opacity: 0.9;
       }
 
-      /* HIGHLIGHT */
-      .step.highlight .icon {
+      .finlily-how__step.highlight .finlily-how__icon {
         background: #1affb2;
         color: #052d25;
       }
 
-      /* ======================= */
-      /* ===== TABLET ===== */
-      /* ======================= */
-
+      /* ===== TABLET & MOBILE TIMELINE ===== */
       @media (max-width: 1024px) {
-        .how-heading {
-          font-size: 32px;
-        }
-
-        .steps {
-          flex-wrap: wrap;
-          justify-content: center;
-          gap: 30px 60px;
-        }
-
-        .step {
-          width: 220px;
-        }
-
-        /* hide desktop arrows */
-        .step::after {
-          display: none;
-        }
-      }
-
-      /* ======================= */
-      /* ===== MOBILE ===== */
-      /* ======================= */
-
-      @media (max-width: 600px) {
-        .how-heading {
-          font-size: 26px;
-          margin-bottom: 40px;
-        }
-
-        .steps {
+        .finlily-how__steps {
           flex-direction: column;
           align-items: center;
-          gap: 26px;
+          position: relative;
+          gap: 30px;
+          padding: 10px 0;
         }
 
-        /* Card style */
-        .step {
+        /* THE BACKGROUND LINE */
+        .finlily-how__steps::before {
+          content: "";
+          position: absolute;
+          top: 20px;
+          bottom: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 3px;
+          background: #1affb2;
+          opacity: 0.5;
+          border-radius: 10px;
+        }
+
+        /* STEP CARD */
+        .finlily-how__step {
           width: 100%;
-          max-width: 420px;
+          max-width: 520px;
           display: flex;
           align-items: center;
-          text-align: left;
           gap: 16px;
-          padding: 18px;
+          text-align: left;
+          padding: 18px 22px;
           background: linear-gradient(145deg, #111a2e, #0c1426);
           border-radius: 16px;
+          position: relative;
+          z-index: 1; /* keeps it above the line */
         }
 
-        .icon {
+        .finlily-how__icon {
           margin: 0;
-          flex-shrink: 0;
           width: 48px;
           height: 48px;
           font-size: 22px;
+          flex-shrink: 0;
         }
+      }
 
-        /* DOWN ARROW */
-        .step:not(:last-child)::after {
-          content: "↓";
-          position: static;
-          display: block;
-          text-align: center;
+      /* MOBILE */
+      @media (max-width: 600px) {
+        .finlily-how__heading {
           font-size: 26px;
-          color: #1affb2;
-          margin: 6px 0 -10px;
-          width: 100%;
+          margin-bottom: 40px;
         }
       }
     </style>
 
     <!-- ========================= HOW IT WORKS SECTION =========================  -->
-    <!-- ================SUBSCRIPTION PLANS SECTION=================  -->
-    <div class="finlily-pricing" id="SUBSCRIPTION-Section">
-      <h2 class="fp-title">Easy <i>Choices</i>. No <i>Surprises</i>.</h2>
-      <p class="fp-sub">
-        Simple, transparent plans designed to support your investing journey.
-      </p>
+    <!-- ============================================  -->
+    <!-- ============== TRUST & AUTHORITY SECTION ================= -->
+    <section class="finlily-trust">
+      <h2 class="ft-title">
+        Built on Experience. <span>Backed by Research.</span>
+      </h2>
 
-      <div class="fp-row">
-        <!-- 3 MONTHS -->
-        <div class="fp-card">
-          <div class="discount-badge">15% OFF</div>
-          <div class="fp-pill">STARTER</div>
-
-          <h3>Quarterly (3 Months)</h3>
-
-          <div class="price-row">
-            <span class="new">₹1,699</span>
-            <span class="old">₹1,999</span>
-          </div>
-
-          <ul>
-            <li>Weekly stock recommendations</li>
-            <li>Structured learning modules</li>
-            <li>Research reports</li>
-            <li>Beginner guidance</li>
-            <li>Email support</li>
-          </ul>
-
-          <button onclick="openApp()">Get Started</button>
-        </div>
-
-        <!-- 6 MONTHS -->
-        <div class="fp-card highlight">
-          <div class="discount-badge">15% OFF</div>
-          <div class="fp-pill glow">MOST POPULAR</div>
-
-          <h3>Half-Yearly (6 Months)</h3>
-
-          <div class="price-row">
-            <span class="new">₹2549</span>
-            <span class="old">₹2,999</span>
-          </div>
-
-          <ul>
-            <li>Everything in 3-Month plan</li>
-            <li>Priority updates</li>
-            <li>Analyst guidance</li>
-            <li>Trend insights</li>
-            <li>Faster support</li>
-          </ul>
-
-          <button onclick="openApp()">Get Started</button>
-        </div>
-
-        <!-- 12 MONTHS -->
-        <div class="fp-card">
-          <div class="discount-badge">54% OFF</div>
-          <div class="fp-pill">BEST VALUE</div>
-
-          <h3>Annually (12 Months)</h3>
-
-          <div class="price-row">
-            <span class="new">₹2,499</span>
-            <span class="old">₹5,434</span>
-          </div>
-
-          <ul>
-            <li>All features unlocked</li>
-            <li>Maximum savings</li>
-            <li>Mentorship access</li>
-            <li>Strategy sessions</li>
-            <li>Investor community</li>
-          </ul>
-
-          <button onclick="openApp()">Get Started</button>
-        </div>
+      <!-- TRUST POINTS -->
+      <div class="ft-points">
+        <div>✔ SEBI Registered Research Analysts</div>
+        <div>✔ 20+ Years Market Experience</div>
+        <div>✔ Research Driven Recommendations</div>
+        <div>✔ Education + Recommendation Model</div>
+        <div>✔ Structured Swing Trading Framework</div>
       </div>
 
-      <!-- PROMO BANNER -->
-      <div class="promo-banner">
-        Use Promo Code <b>FINLILY15</b> to avail the offer
-      </div>
+      <!-- SCROLL CARDS -->
+      <div class="ft-scroll">
+        <!-- CARD 1 -->
+        <div class="ft-card">
+          <img
+            class="verify"
+            src="https://cdn-icons-png.flaticon.com/512/300/300221.png"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?fit=crop&w=200&h=200&q=80"
+          />
+          <h4>Rahul Sharma</h4>
+          <p class="role">SEBI Registered RA</p>
+          <p class="quote">
+            “15+ years analyzing Indian markets. Focused on risk-managed swing
+            strategies.”
+          </p>
+        </div>
 
-      <!-- HOT CALLS -->
-      <div class="hot-wrap" id="HOT-calls-section">
-        <p class="try-now">Not ready to commit to a plan yet..???</p>
-        <h2>Try Hot <i>Calls</i>...</h2>
+        <!-- CARD 2 -->
+        <div class="ft-card">
+          <img
+            class="verify"
+            src="https://cdn-icons-png.flaticon.com/512/300/300221.png"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?fit=crop&w=200&h=200&q=80"
+          />
+          <h4>Anil Mehta</h4>
+          <p class="role">Equity Research Analyst</p>
+          <p class="quote">“Specialist in fundamentals & earnings plays.”</p>
+        </div>
 
-        <p class="hot-sub">
-          Get Instant Research-Based Stock Insight from SEBI Registered Research
-          Analysts at <br />a Price of a cup of <i>Coffee</i>!!
-        </p>
+        <!-- CARD 3 -->
+        <div class="ft-card">
+          <img
+            class="verify"
+            src="https://cdn-icons-png.flaticon.com/512/300/300221.png"
+          />
+          <img
+            src="https://plus.unsplash.com/premium_photo-1691030256264-59cdf9414ed1?w=600&auto=format&fit=crop&q=60"
+          />
+          <h4>Kiran Patel</h4>
+          <p class="role">Swing Trading Expert</p>
+          <p class="quote">
+            “Captures momentum swings using disciplined frameworks.”
+          </p>
+        </div>
 
-        <div class="hot-card">
-          <div class="hot-top">
-            <div class="hot-badge">TREADING NOW</div>
-            <p class="try-text">Try Before You Subscribe</p>
-          </div>
+        <!-- CARD 4 -->
+        <div class="ft-card">
+          <img
+            class="verify"
+            src="https://cdn-icons-png.flaticon.com/512/300/300221.png"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1615109398623-88346a601842?fit=crop&w=200&h=200&q=80"
+          />
+          <h4>Nandish Gupta</h4>
+          <p class="role">Market Strategist</p>
+          <p class="quote">
+            “Macro-driven strategist guiding investors in volatility.”
+          </p>
+        </div>
 
-          <div class="price">
-            ₹69
-            <p>Single Research Stock Call</p>
-          </div>
+        <!-- CARD 5 -->
+        <div class="ft-card">
+          <img
+            class="verify"
+            src="https://cdn-icons-png.flaticon.com/512/300/300221.png"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?fit=crop&w=200&h=200&q=80"
+          />
+          <h4>Arjun Verma</h4>
+          <p class="role">Technical Analyst</p>
+          <p class="quote">“Chart pattern & volume analysis specialist.”</p>
+        </div>
 
-          <ul>
-            <li>One SEBI RA research call</li>
-            <li>No subscription required</li>
-            <li>Evaluate quality first</li>
-          </ul>
-
-          <button onclick="openApp()">Try ₹69 Call</button>
+        <!-- CARD 6 -->
+        <div class="ft-card">
+          <img
+            class="verify"
+            src="https://cdn-icons-png.flaticon.com/512/300/300221.png"
+          />
+          <img
+            src="https://plus.unsplash.com/premium_photo-1682098109069-0e49e3b42884?w=600&auto=format&fit=crop&q=60"
+          />
+          <h4>Sneha Iyer</h4>
+          <p class="role">Derivatives Expert</p>
+          <p class="quote">
+            “Options strategist focused on safe premium plays.”
+          </p>
         </div>
       </div>
-
-      <p class="fp-note">
-        Subscriptions are analyst-specific and charged individually.*
-      </p>
-    </div>
+    </section>
 
     <style>
-      /* PRICE STYLE */
-      .price-row {
-        margin: 15px 0;
+      /* RESET */
+      .finlily-trust * {
+        box-sizing: border-box;
+        margin: 0;
       }
 
-      .price-row .new {
-        font-size: 26px;
-        font-weight: 700;
-        color: #2dd4bf; /* Finlily teal */
-        margin-right: 10px;
+      .finlily-trust img {
+        display: block;
+        max-width: 100%;
       }
 
-      .price-row .old {
-        text-decoration: line-through;
-        opacity: 0.5;
-        font-size: 20px;
-        color: #94a3b8;
+      /* SECTION */
+      .finlily-trust {
+        background: radial-gradient(circle at 30% 10%, #0f1b34, #081224 60%);
+        padding: 80px 16px;
+        color: white;
+        text-align: center;
+        font-family: Inter, system-ui;
       }
 
-      /* DISCOUNT BADGE — MATCH SITE */
-      .discount-badge {
-        position: absolute;
-        top: 8px;
-        right: 5px;
-        background: linear-gradient(135deg, #ffffff, #62cec1);
-        color: #000;
-        border: 1px solid rgba(255, 255, 255, 0.25);
-
-        padding: 6px 14px;
-        border-radius: 999px;
-        font-size: 12px;
-        font-weight: 700;
-
-        letter-spacing: 0.5px;
+      /* TITLE */
+      .ft-title {
+        font-size: 34px;
+        margin-bottom: 36px;
       }
-
-      /* PROMO BANNER — DARK GLASS STYLE */
-      .promo-banner {
-        margin: 25px auto;
-        background: linear-gradient(180deg, #0b1220, #0f172a);
-        border: 1px solid rgba(45, 212, 191, 0.3);
-        padding: 15px;
-        border-radius: 16px;
-        font-size: 18px;
-        font-weight: 600;
-        max-width: 700px;
-        color: #e5e7eb;
-
-        /* glow */
-        box-shadow: 0 0 25px rgba(45, 212, 191, 0.15);
-      }
-
-      .promo-banner b {
+      .ft-title span {
         color: #2dd4bf;
       }
 
-      .finlily-pricing {
-        background: radial-gradient(circle at 20% 10%, #0f1b34, #081224 60%);
-        padding: 100px 20px;
-        color: white;
-        font-family: Inter, system-ui;
-        text-align: center;
-      }
-
-      .fp-title {
-        font-size: 40px;
-      }
-      .fp-sub {
-        opacity: 0.7;
-        font-size: 22px;
-        margin-bottom: 55px;
-        margin-top: -12px;
-      }
-
-      .fp-row {
+      /* TRUST POINTS */
+      .ft-points {
         display: flex;
-        gap: 30px;
+        flex-wrap: wrap;
         justify-content: center;
-        flex-wrap: nowrap;
+        gap: 12px;
+        max-width: 900px;
+        margin: 0 auto 45px;
+      }
+
+      .ft-points div {
+        background: #0e1a2d;
+        border: 1px solid rgba(45, 212, 191, 0.3);
+        padding: 8px 14px;
+        border-radius: 30px;
+        font-size: 13px;
+      }
+
+      /* SCROLL */
+      .ft-scroll {
+        display: flex;
+        gap: 14px;
         overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-left: 6px;
+      }
+
+      .ft-scroll::-webkit-scrollbar {
+        display: none;
       }
 
       /* CARD */
-      .fp-card {
-        background: linear-gradient(180deg, #182d4e, #000000);
-        border: 1px solid rgba(54, 151, 188, 0.25);
-        border-radius: 22px;
-        padding: 25px;
-        width: 300px;
+      .ft-card {
+        background: linear-gradient(180deg, #0e1a2d, #0a1426);
+        border: 1px solid rgba(45, 212, 191, 0.25);
+        border-radius: 16px;
+        padding: 16px;
+        min-width: 170px;
+        max-width: 180px;
+        scroll-snap-align: start;
         position: relative;
+        flex-shrink: 0;
       }
 
-      /* glow border */
-      .fp-card:hover {
-        border: 1px solid #2dd4bf;
-        box-shadow: 0 0 25px rgba(45, 212, 191, 0.25);
-      }
-
-      /* glass shine */
-      .fp-card::after {
-        content: "";
+      /* VERIFY ICON */
+      .ft-card .verify {
         position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          120deg,
-          transparent,
-          rgba(255, 255, 255, 0.05),
-          transparent
-        );
-        opacity: 0.4;
-        pointer-events: none;
+        top: 8px;
+        right: 8px;
+        width: 18px;
+        height: 18px;
+        background: white;
+        padding: 3px;
+        border-radius: 50%;
       }
 
-      .fp-pill {
-        display: inline-block;
-        background: #25ae9d;
-        padding: 6px 14px;
-        border-radius: 30px;
+      /* AVATAR */
+      .ft-card img:not(.verify) {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        margin: 0 auto 6px;
+      }
+
+      /* TEXT */
+      .ft-card h4 {
         font-size: 13px;
-        font-weight: 600;
-        margin-bottom: 10px;
+        margin: 4px 0 2px;
       }
 
-      .fp-card h3 {
-        margin: 10px 0 20px;
-      }
-
-      .fp-card ul {
-        list-style: none;
-        padding: 0;
-        text-align: left;
-      }
-
-      .fp-card li {
-        margin: 12px 0;
-        padding-left: 22px;
-        position: relative;
-        opacity: 0.9;
-      }
-
-      .fp-card li::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        color: #2dd4bf;
-        font-weight: bold;
-      }
-
-      .fp-card button {
-        margin-top: 20px;
-        background: #2dd4bf;
-        color: #042f2e;
-        border: none;
-        padding: 14px;
-        width: 100%;
-        border-radius: 12px;
-        font-weight: 600;
-        cursor: pointer;
-      }
-      .fp-card button:hover {
-        background: #1c9b94;
-        color: white;
-      }
-
-      /* HOT CALL */
-      .hot-wrap {
-        margin-top: 90px;
-      }
-      .hot-wrap h2 {
-        font-size: 38px;
-        font-weight: 700;
-        margin: 0;
-      }
-      .try-now {
+      .role {
+        font-size: 11px;
         opacity: 0.7;
-        margin: 0 0 8px 0;
-        font-size: 18px;
-      }
-      /* .hot-card p {
-    opacity: 0.7;
-    margin: 10px 0 30px;
-    font-size: 22px;
-  } */
-      .hot-top {
-        text-align: center;
-        margin-bottom: 10px;
-      }
-      .try-text {
-        opacity: 0.7;
-        margin: 1px 0 15px;
-        font-size: 18px;
+        margin-bottom: 6px;
       }
 
-      .hot-card {
-        background: linear-gradient(180deg, #182d4e, #000000);
-        border: 1px solid rgba(54, 151, 188, 0.25);
-        border-radius: 22px;
-        padding: 40px;
-        max-width: 415px;
-        margin: 30px auto;
-        text-align: center;
-      }
-      .hot-card:hover {
-        border: 1px solid rgba(45, 212, 191, 0.4);
-        box-shadow: 0 0 30px rgba(45, 212, 191, 0.15);
-      }
-      .hot-card span {
-        opacity: 0.7;
-      }
-      /* Subheading text */
-      .hot-sub {
-        display: block;
-        max-width: 815px;
-        margin: 12px auto 40px auto;
-
-        text-align: center;
-        line-height: 1.6;
-        font-size: 22px;
-        opacity: 0.75;
+      .quote {
+        font-size: 11px;
+        line-height: 1.35;
+        opacity: 0.85;
+        background: #0c1629;
+        padding: 8px;
+        border-radius: 10px;
+        border: 1px solid rgba(45, 212, 191, 0.15);
+        font-style: italic;
       }
 
-      /* WOW Badge */
-      .hot-badge {
-        display: inline-block;
-        margin-bottom: 15px;
-        top: 8px !important;
-        right: 5px !important;
-        background: linear-gradient(135deg, #ffffff, #62cec1);
-        color: #000;
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        padding: 6px 14px;
-        border-radius: 999px;
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 0.5px;
-      }
-
-      .price {
-        text-align: center;
-        font-size: 52px;
-        font-weight: 700;
-        margin: 10px 0 5px;
-      }
-
-      .price p {
-        opacity: 0.8;
-        margin-top: 6px;
-        margin: 10px 0 30px;
-        font-size: 22px;
-      }
-
-      .hot-card ul {
-        list-style: none;
-        padding: 0;
-        text-align: left;
-      }
-
-      .hot-card li {
-        margin: 12px 0;
-        padding-left: 22px;
-        position: relative;
-      }
-
-      .hot-card li::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        color: #2dd4bf;
-      }
-
-      .hot-card button {
-        background: #2dd4bf;
-        color: #042f2e;
-        border: none;
-        padding: 14px;
-        width: 100%;
-        border-radius: 12px;
-        font-weight: 600;
-        margin-top: 15px;
-      }
-      .hot-card button:hover {
-        background: #1c9b94;
-        color: white;
-      }
-
-      /* NOTE */
-      .fp-note {
-        opacity: 0.8;
-        margin-top: 40px;
-        font-size: 14px;
+      /* MOBILE TITLE */
+      @media (max-width: 768px) {
+        .ft-title {
+          font-size: 24px;
+        }
       }
     </style>
 
@@ -1959,9 +1764,9 @@
     </script>
 
     <!-- ==============TRUST & AUTHORITY SECTION================   -->
-    <!-- ========== FAQ SECTION ===========  -->
-    <section class="fx-why">
-      <!-- CENTER HEADING -->
+    <!-- ========== FAQ SECTION =========== -->
+    <section class="fx-why" id="FAQ-Section">
+      <!-- TOP -->
       <div class="fx-top">
         <span class="fx-tag">FAQ</span>
         <h2>
@@ -2016,7 +1821,7 @@
           </div>
         </div>
 
-        <!-- RIGHT SIDE -->
+        <!-- RIGHT -->
         <div class="fx-right">
           <img
             class="fx-img"
@@ -2041,7 +1846,6 @@
 
             <a href="#" class="fx-btn">Start Investing</a>
 
-            <!-- FLOATING BADGE -->
             <div class="fx-assets">
               <small>Assets Managed for</small>
               <h4>10,000+ Investors</h4>
@@ -2052,8 +1856,9 @@
     </section>
 
     <style>
+      /* SECTION */
       .fx-why {
-        padding: 90px 20px;
+        padding: 80px 16px;
         background: linear-gradient(135deg, #0b1220, #111c2f, #0b1220);
         color: white;
         font-family: Inter, system-ui;
@@ -2062,18 +1867,18 @@
       /* TOP */
       .fx-top {
         text-align: center;
-        margin-bottom: 60px;
+        margin-bottom: 50px;
       }
       .fx-tag {
         border: 1px solid #1affb2;
         padding: 6px 16px;
         border-radius: 30px;
         color: #1affb2;
-        font-size: 14px;
+        font-size: 13px;
       }
       .fx-top h2 {
-        font-size: 38px;
-        margin-top: 20px;
+        font-size: 34px;
+        margin-top: 18px;
       }
       .fx-top span {
         color: #1affb2;
@@ -2084,7 +1889,7 @@
         max-width: 1200px;
         margin: auto;
         display: flex;
-        gap: 50px;
+        gap: 40px;
         flex-wrap: wrap;
       }
 
@@ -2092,9 +1897,11 @@
       .fx-left {
         flex: 1 1 480px;
       }
+
       .fx-item {
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       }
+
       .fx-item button {
         width: 100%;
         background: none;
@@ -2103,12 +1910,14 @@
         padding: 14px 0;
         display: flex;
         justify-content: space-between;
-        font-size: 17px;
+        font-size: 16px;
         cursor: pointer;
       }
+
       .fx-item b {
         color: #1affb2;
       }
+
       .fx-item p {
         max-height: 0;
         overflow: hidden;
@@ -2116,6 +1925,7 @@
         font-size: 14px;
         transition: 0.3s;
       }
+
       .fx-item.active p {
         max-height: 80px;
         padding-bottom: 12px;
@@ -2125,57 +1935,46 @@
       .fx-right {
         flex: 1 1 420px;
       }
+
       .fx-img {
         width: 100%;
-        border-radius: 16px;
-        height: 220px;
+        border-radius: 14px;
+        height: 200px;
         object-fit: cover;
-        margin-bottom: 20px;
+        margin-bottom: 18px;
       }
 
       /* CARD */
       .fx-card {
         position: relative;
-        background: linear-gradient(180deg, #182d4e, #000000);
+        background: linear-gradient(180deg, #182d4e, #000);
         border: 1px solid rgba(54, 151, 188, 0.25);
-        /* background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.08); */
-        padding: 28px;
-        padding-bottom: 90px;
-        border-radius: 18px;
-        overflow: hidden;
-        transition: 0.3s;
-      }
-
-      .fx-card:hover {
-        box-shadow: 0 0 30px rgba(26, 255, 178, 0.15);
-        transform: translateY(-4px);
+        padding: 24px;
+        padding-bottom: 80px;
+        border-radius: 16px;
       }
 
       .fx-card h3 {
-        font-size: 22px;
+        font-size: 20px;
         margin-bottom: 10px;
       }
+
       .fx-desc {
         opacity: 0.75;
         font-size: 14px;
-        margin-bottom: 15px;
+        margin-bottom: 12px;
       }
 
       .fx-points {
         list-style: none;
         padding: 0;
-        margin: 10px 0 20px;
+        margin: 10px 0 18px;
         font-size: 14px;
-      }
-      .fx-points li {
-        margin-bottom: 6px;
       }
 
       .fx-btn {
         display: inline-block;
-        padding: 12px 22px;
+        padding: 10px 20px;
         border-radius: 30px;
         border: 1px solid #1affb2;
         color: #1affb2;
@@ -2185,31 +1984,46 @@
       /* FLOATING BADGE */
       .fx-assets {
         position: absolute;
-        right: 18px;
-        bottom: 18px;
-        background: linear-gradient(145deg, #0f172a, #111c2f);
+        right: 14px;
+        bottom: 14px;
+        background: #0f172a;
         border: 1px solid rgba(26, 255, 178, 0.35);
-        padding: 14px 18px;
-        border-radius: 14px;
+        padding: 12px 14px;
+        border-radius: 12px;
         text-align: right;
-        box-shadow: 0 0 20px rgba(26, 255, 178, 0.15);
       }
 
       .fx-assets small {
         color: #1affb2;
-        font-size: 12px;
+        font-size: 11px;
       }
 
       .fx-assets h4 {
-        font-size: 22px;
-        margin: 4px 0 0;
-        line-height: 1;
+        font-size: 18px;
+        margin-top: 4px;
       }
 
       /* MOBILE */
       @media (max-width: 768px) {
         .fx-top h2 {
-          font-size: 26px;
+          font-size: 24px;
+        }
+
+        .fx-wrap {
+          flex-direction: column;
+          gap: 30px;
+        }
+
+        .fx-img {
+          height: 170px;
+        }
+
+        .fx-assets {
+          position: relative;
+          right: auto;
+          bottom: auto;
+          margin-top: 16px;
+          text-align: center;
         }
       }
     </style>
@@ -2222,9 +2036,8 @@
       });
     </script>
 
-    <!-- ========== FAQ SECTION ===========   -->
     <!-- ========== Final CTA SECTION ===========   -->
-    <section class="fx-final-cta">
+    <section class="fx-final-cta" id="final-cta-section">
       <!-- GLOW BACKGROUND -->
       <div class="fx-cta-glow"></div>
 
@@ -2415,7 +2228,8 @@
     </style>
 
     <!-- ========= Final CTA SECTION ===========   -->
-    <!-- ===========Footer============  -->
+    <!-- =========== FOOTER =========== -->
+    <!-- =========== FOOTER =========== -->
     <footer class="fx-footer">
       <div class="fx-footer-wrap">
         <!-- BRAND -->
@@ -2432,7 +2246,6 @@
 
           <p class="fx-mail">support@finlilytechnology.com</p>
 
-          <!-- SOCIALS -->
           <div class="fx-socials">
             <a
               href="https://www.linkedin.com/company/finlily-technology/"
@@ -2442,7 +2255,6 @@
                 src="https://framerusercontent.com/images/4I0uO5WpISDay2aPXHK8Kb9HAc.svg"
               />
             </a>
-
             <a
               href="https://www.facebook.com/people/Finlily-Technology/61559080864349/"
               target="_blank"
@@ -2451,7 +2263,6 @@
                 src="https://framerusercontent.com/images/yzxNInoSyounvdXiRvGHQXZFYc.png"
               />
             </a>
-
             <a
               href="https://www.instagram.com/finlilytechnology/"
               target="_blank"
@@ -2463,34 +2274,28 @@
           </div>
         </div>
 
-        <!-- COMPANY -->
-        <div class="fx-col">
-          <h4>Company</h4>
-          <a href="#">About</a>
-          <a href="#">Learn</a>
-          <a href="#">Pricing</a>
-          <a href="#">Support</a>
-        </div>
+        <!-- LINKS -->
+        <div class="fx-links">
+          <div class="fx-col">
+            <h4>Company</h4>
+            <a href="#HOME-section">About</a>
+            <a href="#">Learn</a>
+            <a href="#SUBSCRIPTION-Section">Pricing</a>
+            <a href="#">Support</a>
+          </div>
 
-        <!-- PRODUCT -->
-        <div class="fx-col">
-          <h4>Product</h4>
-          <a href="#">Stock Calls</a>
-          <a href="#">Hot Calls</a>
-          <a href="#">Our App</a>
-          <a href="#">Features</a>
-        </div>
-
-        <!-- LEGAL -->
-        <div class="fx-col">
-          <h4>Legal</h4>
-          <a href="#">Terms & Conditions</a>
-          <a href="#">Privacy Policy</a>
+          <div class="fx-col">
+            <h4>Product</h4>
+            <a href="#">Stock Calls</a>
+            <a href="#HOT-calls-section">Hot Calls</a>
+            <a href="#final-cta-section">Our App</a>
+            <a href="#FAQ-Section">Questions?</a>
+          </div>
         </div>
 
         <!-- DOWNLOAD -->
-        <div class="fx-col">
-          <h4>Download Our App</h4>
+        <div class="fx-col fx-download">
+          <h4>Get the App</h4>
 
           <a
             href="https://apps.apple.com/in/app/finlily-sebi-ra-stock-calls/id6741014770"
@@ -2510,6 +2315,16 @@
         </div>
       </div>
 
+      <!-- LEGAL CENTERED -->
+      <div class="fx-legal">
+        <a href="https://finlilytechnology.com/terms-conditions"
+          >Terms & Conditions</a
+        >
+        <a href="https://finlilytechnology.com/privacy-policy"
+          >Privacy Policy</a
+        >
+      </div>
+
       <!-- BOTTOM -->
       <div class="fx-bottom">
         <p class="fx-note">
@@ -2523,121 +2338,146 @@
     </footer>
 
     <style>
+      /* FOOTER */
       .fx-footer {
         background: #060b14;
         color: #94a3b8;
-        padding: 70px 20px 30px;
+        padding: 60px 20px 25px;
         font-family: Inter, system-ui;
       }
 
+      /* GRID */
       .fx-footer-wrap {
         max-width: 1200px;
         margin: auto;
         display: grid;
-        grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+        grid-template-columns: 1.5fr 1fr 1fr;
         gap: 40px;
       }
 
       /* BRAND */
       .fx-logo {
-        width: 140px;
-        margin-bottom: 14px;
+        width: 130px;
+        margin-bottom: 12px;
       }
 
       .fx-desc {
-        font-size: 14px;
+        font-size: 13px;
         opacity: 0.7;
-        margin-bottom: 12px;
+        margin-bottom: 10px;
+        line-height: 1.5;
       }
 
       .fx-mail {
         color: white;
-        font-size: 14px;
-        margin-bottom: 16px;
+        font-size: 13px;
+        margin-bottom: 14px;
       }
 
-      /* SOCIALS (MATCH DESIGN) */
+      /* SOCIALS */
       .fx-socials {
         display: flex;
-        gap: 12px;
-      }
-
-      .fx-socials a {
-        width: 44px;
-        height: 44px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        border-radius: 12px;
-        transition: 0.25s;
+        gap: 10px;
       }
       .fx-socials img {
-        width: 40px;
-        height: 28px;
-        object-fit: contain;
+        width: 26px;
+        height: 26px;
       }
 
-      .fx-socials a:hover {
-        transform: translateY(-2px);
+      /* LINKS */
+      .fx-links {
+        display: flex;
+        gap: 40px;
       }
 
-      /* COLUMNS */
       .fx-col h4 {
         color: white;
-        font-size: 14px;
-        margin-bottom: 14px;
+        font-size: 13px;
+        margin-bottom: 12px;
       }
 
       .fx-col a {
         display: block;
         text-decoration: none;
         color: #94a3b8;
-        font-size: 14px;
-        margin-bottom: 10px;
+        font-size: 13px;
+        margin-bottom: 8px;
       }
 
       .fx-col a:hover {
         color: #1affb2;
       }
 
-      /* STORE BADGES */
+      /* DOWNLOAD */
       .fx-badge {
-        height: 42px;
-        margin-bottom: 12px;
+        height: 40px;
+        margin-bottom: 10px;
+      }
+
+      /* LEGAL CENTER */
+      .fx-legal {
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      .fx-legal a {
+        color: #94a3b8;
+        margin: 0 12px;
+        font-size: 13px;
+        text-decoration: none;
+      }
+
+      .fx-legal a:hover {
+        color: #1affb2;
       }
 
       /* BOTTOM */
       .fx-bottom {
         border-top: 1px solid rgba(255, 255, 255, 0.08);
-        margin-top: 40px;
-        padding-top: 25px;
+        margin-top: 25px;
+        padding-top: 20px;
         text-align: center;
       }
 
       .fx-note {
-        max-width: 750px;
+        max-width: 720px;
         margin: auto;
-        font-size: 12px;
+        font-size: 11px;
         opacity: 0.55;
         line-height: 1.6;
       }
 
       .fx-copy {
-        margin-top: 12px;
-        font-size: 12px;
+        margin-top: 10px;
+        font-size: 11px;
         opacity: 0.5;
       }
 
-      /* MOBILE */
+      /* TABLET & MOBILE */
       @media (max-width: 900px) {
         .fx-footer-wrap {
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: 1fr;
+          text-align: center;
+          gap: 30px;
+        }
+
+        .fx-socials {
+          justify-content: center;
+        }
+
+        /* Company + Product side-by-side */
+        .fx-links {
+          justify-content: center;
+          gap: 60px;
+          text-align: left;
+        }
+
+        .fx-download {
+          text-align: center;
         }
       }
     </style>
 
-    <!-- =========== Footer ===========  -->
     <style>
       /* ============================= */
       /* GLOBAL ELEMENTOR SAFE FIXES */
@@ -2754,7 +2594,6 @@
       /* ============================= */
       /* ===== MOBILE FIXES ===== */
       /* ============================= */
-
       @media (max-width: 768px) {
         /* HERO */
 
@@ -2840,6 +2679,9 @@
 
         .card-content {
           width: 100%;
+        }
+        .card-content h3 {
+          margin: 10px;
         }
 
         /* HOW */
