@@ -44,7 +44,9 @@
           Get it on Play Store
         </a>
 
-        <a href="#contact" class="menu-btn">Contact Us</a>
+        <a href="https://finlilytechnology.com/#support" class="menu-btn"
+          >Contact Us</a
+        >
 
         <!-- SOCIAL -->
         <div class="follow">
@@ -848,12 +850,16 @@
               <h3>Trial Call</h3>
               <ul>
                 <li>Unlock 1 stock recommendation</li>
-                <li>No subscription needed</li>
+                <li>No Subscription needed</li>
                 <li>Evaluate quality first</li>
                 <li>Try before subscribing</li>
               </ul>
 
-              <a href="#" class="finlily-core__btn">Download Finlily App</a>
+              <a
+                href="https://play.google.com/store/apps/details?id=com.finlily"
+                class="finlily-core__btn"
+                >Download Finlily App</a
+              >
             </div>
           </div>
 
@@ -1142,30 +1148,58 @@
       .finlily-how__steps {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         gap: 40px;
+        position: relative;
+      }
+
+      /* HORIZONTAL LINE BEHIND ICONS */
+      .finlily-how__steps::before {
+        content: "";
+        position: absolute;
+        top: 30px;
+        left: 5%;
+        width: 87%;
+        height: 2.5px;
+        background: #1affb2;
+        opacity: 0.8;
+        border-radius: 10px;
+        z-index: 0;
       }
 
       .finlily-how__step {
         text-align: center;
         width: 180px;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* > BETWEEN STEPS ON THE LINE */
+      .finlily-how__step:not(:last-child)::after {
+        content: ">";
+        position: absolute;
+        right: -28px;
+        top: 16px;
+        font-size: 28px;
+        color: #1affb2;
+        opacity: 0.9;
       }
 
       .finlily-how__icon {
-        width: 60px;
-        height: 60px;
+        width: 70px;
+        height: 70px;
         display: flex;
         align-items: center;
         justify-content: center;
         background: #00697e;
         border-radius: 50%;
-        font-size: 26px;
+        font-size: 38px;
         margin: auto;
-        margin-bottom: 14px;
+        margin-bottom: 18px;
       }
 
       .finlily-how__step p {
-        font-size: 15px;
+        font-size: 18px;
         opacity: 0.9;
       }
 
@@ -1179,13 +1213,19 @@
         .finlily-how__steps {
           flex-direction: column;
           align-items: center;
-          position: relative;
           gap: 30px;
           padding: 10px 0;
         }
 
-        /* THE BACKGROUND LINE */
+        /* remove desktop line & arrows */
+        .finlily-how__steps::before,
+        .finlily-how__step::after {
+          display: none;
+        }
+
+        /* vertical timeline line */
         .finlily-how__steps::before {
+          display: block;
           content: "";
           position: absolute;
           top: 20px;
@@ -1198,7 +1238,7 @@
           border-radius: 10px;
         }
 
-        /* STEP CARD */
+        /* step card */
         .finlily-how__step {
           width: 100%;
           max-width: 520px;
@@ -1209,8 +1249,7 @@
           padding: 18px 22px;
           background: linear-gradient(145deg, #111a2e, #0c1426);
           border-radius: 16px;
-          position: relative;
-          z-index: 1; /* keeps it above the line */
+          z-index: 1;
         }
 
         .finlily-how__icon {
@@ -1232,6 +1271,7 @@
     </style>
 
     <!-- ========================= HOW IT WORKS SECTION =========================  -->
+
     <!-- ============================================  -->
     <!-- ================ SUBSCRIPTION PLANS SECTION ================= -->
     <section class="finlily-pricingX" id="SUBSCRIPTION-Section">
@@ -1262,7 +1302,16 @@
             <li>Email support</li>
           </ul>
 
-          <button onclick="openApp()">Get Started</button>
+          <button
+            onclick="
+              window.open(
+                'https://play.google.com/store/apps/details?id=com.finlily',
+                '_blank',
+              )
+            "
+          >
+            Get Started
+          </button>
         </div>
 
         <!-- POPULAR -->
@@ -1285,7 +1334,16 @@
             <li>Faster support</li>
           </ul>
 
-          <button onclick="openApp()">Get Started</button>
+          <button
+            onclick="
+              window.open(
+                'https://play.google.com/store/apps/details?id=com.finlily',
+                '_blank',
+              )
+            "
+          >
+            Get Started
+          </button>
         </div>
 
         <!-- BEST VALUE -->
@@ -1308,7 +1366,16 @@
             <li>Investor community</li>
           </ul>
 
-          <button onclick="openApp()">Get Started</button>
+          <button
+            onclick="
+              window.open(
+                'https://play.google.com/store/apps/details?id=com.finlily',
+                '_blank',
+              )
+            "
+          >
+            Get Started
+          </button>
         </div>
       </div>
 
@@ -1318,7 +1385,7 @@
       </div>
 
       <!-- HOT CALL -->
-      <div class="fpX-hot">
+      <div class="fpX-hot" id="HOT-calls-section">
         <p class="try-now">Not ready to commit yet?</p>
         <h2>Try Hot <i>Calls</i>...</h2>
 
@@ -1340,7 +1407,16 @@
             <li>Evaluate quality first</li>
           </ul>
 
-          <button onclick="openApp()">Try ₹69 Call</button>
+          <button
+            onclick="
+              window.open(
+                'https://play.google.com/store/apps/details?id=com.finlily',
+                '_blank',
+              )
+            "
+          >
+            Try ₹69 Call
+          </button>
         </div>
       </div>
 
@@ -1390,7 +1466,7 @@
         background: linear-gradient(180deg, #182d4e, #000);
         border: 1px solid rgba(54, 151, 188, 0.25);
         border-radius: 22px;
-        padding: 25px;
+        padding: 35px;
         width: 300px;
         position: relative;
       }
@@ -1464,6 +1540,12 @@
         border-radius: 12px;
         font-weight: 600;
       }
+      .fpX-card button:hover,
+      .hotX-card button:hover {
+        background: #1c9b94;
+        color: white;
+        transform: translateY(-2px);
+      }
 
       /* PROMO */
       .fpX-promo {
@@ -1479,13 +1561,37 @@
       .fpX-hot {
         margin-top: 90px;
       }
-
+      .fpX-hot h2 {
+        font-size: 40px;
+      }
+      .fpX-hot .hot-sub {
+        opacity: 0.7;
+        font-size: 22px;
+        margin: 10px 0 30px;
+      }
+      .fpX-hot .try-now {
+        color: #2dd4bf;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
       .hotX-card {
         background: linear-gradient(180deg, #182d4e, #000);
         border-radius: 22px;
         padding: 35px;
         max-width: 420px;
         margin: 30px auto;
+      }
+      .fpX-hot li {
+        margin: 13px 5px;
+        padding-left: 22px;
+        position: relative;
+        text-align: left;
+      }
+      .fpX-hot li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #2dd4bf;
       }
 
       .hotX-badge {
@@ -1501,10 +1607,13 @@
       .hotX-price {
         font-size: 48px;
         font-weight: 700;
+        color: #2dd4bf;
       }
       .hotX-price p {
         font-size: 18px;
         opacity: 0.8;
+        color: white;
+        padding: 5px 3px;
       }
 
       .fpX-note {
@@ -1954,10 +2063,10 @@
         padding: 6px 16px;
         border-radius: 30px;
         color: #1affb2;
-        font-size: 13px;
+        font-size: 17px;
       }
       .fx-top h2 {
-        font-size: 34px;
+        font-size: 38px;
         margin-top: 18px;
       }
       .fx-top span {
@@ -1987,11 +2096,12 @@
         background: none;
         border: none;
         color: white;
-        padding: 14px 0;
+        padding: 16px 12px;
         display: flex;
         justify-content: space-between;
-        font-size: 16px;
+        font-size: 18px;
         cursor: pointer;
+        font-family: "Trebuchet MS", sans-serif;
       }
 
       .fx-item b {
@@ -1999,16 +2109,17 @@
       }
 
       .fx-item p {
-        max-height: 0;
+        max-height: 3px;
         overflow: hidden;
         opacity: 0.75;
-        font-size: 14px;
+        font-size: 17px;
+        padding: 0 44px;
         transition: 0.3s;
       }
 
       .fx-item.active p {
         max-height: 80px;
-        padding-bottom: 12px;
+        padding-bottom: 22px;
       }
 
       /* RIGHT */
@@ -2358,15 +2469,15 @@
         <div class="fx-links">
           <div class="fx-col">
             <h4>Company</h4>
-            <a href="#HOME-section">About</a>
-            <a href="#">Learn</a>
+            <a href="https://finlilytechnology.com/about-us">About</a>
+            <a href="https://finlilytechnology.com/#benefits">Learn</a>
             <a href="#SUBSCRIPTION-Section">Pricing</a>
-            <a href="#">Support</a>
+            <a href="https://finlilytechnology.com/#support">Support</a>
           </div>
 
           <div class="fx-col">
             <h4>Product</h4>
-            <a href="#">Stock Calls</a>
+            <a href="https://finlilytechnology.com/#stockcalls">Stock Calls</a>
             <a href="#HOT-calls-section">Hot Calls</a>
             <a href="#final-cta-section">Our App</a>
             <a href="#FAQ-Section">Questions?</a>
@@ -2579,338 +2690,10 @@
       section {
         overflow: hidden;
       }
-
-      /* ============================= */
-      /* ===== TABLET FIXES ===== */
-      /* ============================= */
-
-      @media (max-width: 1024px) {
-        /* HERO */
-
-        .fh-container {
-          flex-direction: column;
-          text-align: center;
-        }
-
-        .fh-left h1 {
-          font-size: 40px;
-        }
-
-        .fh-sub {
-          font-size: 18px;
-        }
-
-        .fh-right img {
-          max-width: 70%;
-          transform: none;
-        }
-
-        .fh-trust-strip {
-          width: 100%;
-          justify-content: center;
-          flex-wrap: wrap;
-        }
-
-        /* PROBLEM SOLUTION */
-
-        .ps-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .ps-right {
-          text-align: center;
-        }
-
-        .confusion-visual img {
-          width: 100%;
-        }
-
-        .thought {
-          font-size: 12px;
-        }
-
-        /* CORE */
-
-        .core-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .core-card {
-          max-width: 700px;
-          margin: auto;
-          transform: none !important;
-          opacity: 1 !important;
-        }
-
-        /* STEPS */
-
-        .steps {
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-
-        .step::after {
-          display: none;
-        }
-
-        /* PRICING */
-
-        .fp-row {
-          flex-wrap: wrap;
-          overflow: visible;
-        }
-
-        .fp-card {
-          width: 320px;
-        }
-
-        /* FOOTER */
-
-        .fx-footer-wrap {
-          grid-template-columns: 1fr 1fr;
-        }
-      }
-
-      /* ============================= */
-      /* ===== MOBILE FIXES ===== */
-      /* ============================= */
-      @media (max-width: 768px) {
-        /* HERO */
-
-        .finlily-hero {
-          padding: 60px 16px;
-        }
-
-        .fh-left h1 {
-          font-size: 26px;
-        }
-
-        .fh-sub {
-          font-size: 14px;
-        }
-
-        .fh-tag {
-          font-size: 12px;
-        }
-
-        .store-buttons {
-          /* flex-direction: column; */
-          width: 100%;
-        }
-
-        .store-btn {
-          width: 100%;
-          justify-content: center;
-          padding: 14px;
-        }
-
-        .store-btn .text {
-          font-size: 16px;
-        }
-
-        .fh-right img {
-          max-width: 85%;
-        }
-
-        /* TRUST STRIP */
-
-        .fh-trust-strip {
-          flex-direction: column;
-        }
-
-        .sep {
-          display: none;
-        }
-
-        /* PROBLEM SOLUTION */
-
-        .ps-heading {
-          font-size: 26px;
-        }
-
-        .confusion-visual {
-          width: 220px;
-        }
-
-        .t3,
-        .t4 {
-          display: none;
-        }
-
-        .pain-points {
-          grid-template-columns: 1fr;
-        }
-
-        /* CORE */
-
-        .core-heading {
-          font-size: 26px;
-        }
-
-        .core-card {
-          flex-direction: column;
-          text-align: center;
-        }
-
-        .card-image {
-          width: 100%;
-          height: 160px;
-        }
-
-        .card-content {
-          width: 100%;
-        }
-        .card-content h3 {
-          margin: 10px;
-        }
-
-        /* HOW */
-
-        .how-heading {
-          font-size: 26px;
-        }
-
-        .steps {
-          flex-direction: column;
-        }
-
-        .step {
-          width: 100%;
-          max-width: 420px;
-          display: flex;
-          text-align: left;
-          gap: 14px;
-          padding: 16px;
-          background: linear-gradient(145deg, #111a2e, #0c1426);
-          border-radius: 16px;
-        }
-
-        .icon {
-          width: 48px;
-          height: 48px;
-          font-size: 22px;
-        }
-
-        .step:not(:last-child)::after {
-          content: "↓";
-          display: block;
-          text-align: center;
-          font-size: 24px;
-          color: #1affb2;
-        }
-
-        /* PRICING */
-
-        .fp-title {
-          font-size: 26px;
-        }
-
-        .fp-sub {
-          font-size: 16px;
-        }
-
-        .fp-card {
-          width: 100%;
-          max-width: 380px;
-          margin: auto;
-        }
-
-        /* HOT CARD */
-
-        .hot-wrap h2 {
-          font-size: 26px;
-        }
-
-        .hot-wrap p {
-          font-size: 16px;
-        }
-
-        /* TRUST */
-
-        .trust-title {
-          font-size: 26px;
-        }
-
-        .trust-points {
-          gap: 12px;
-        }
-
-        .trust-points div {
-          font-size: 12px;
-          padding: 10px 14px;
-        }
-
-        /* FAQ */
-
-        .fx-top h2 {
-          font-size: 24px;
-        }
-
-        .fx-wrap {
-          gap: 30px;
-        }
-
-        /* FINAL CTA */
-
-        .fx-final-cta h2 {
-          font-size: 26px;
-        }
-
-        .fx-downloads {
-          flex-direction: column;
-        }
-
-        .fx-dl-btn {
-          width: 100%;
-          justify-content: center;
-        }
-
-        /* FOOTER */
-
-        .fx-footer-wrap {
-          grid-template-columns: 1fr;
-          text-align: center;
-        }
-
-        .fx-socials {
-          justify-content: center;
-        }
-      }
-
-      /* ============================= */
-      /* SMALL PHONE FIX */
-      /* ============================= */
-
-      @media (max-width: 420px) {
-        .fh-left h1 {
-          font-size: 22px;
-        }
-
-        .ps-heading {
-          font-size: 22px;
-        }
-
-        .core-heading {
-          font-size: 22px;
-        }
-
-        .how-heading {
-          font-size: 22px;
-        }
-
-        .fp-title {
-          font-size: 22px;
-        }
-
-        .trust-title {
-          font-size: 22px;
-        }
-
-        .fx-top h2 {
-          font-size: 20px;
-        }
-      }
     </style>
+    /* ============================= */ /* ===== TABLET FIXES ===== */ /*
+    ============================= */
+
     <script>
       // Remove hash from URL on refresh
       if (window.location.hash) {
